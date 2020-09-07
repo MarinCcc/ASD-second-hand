@@ -72,7 +72,7 @@ public class UserServlet extends BaseServlet {
 		
 		// add email verification at release 1
 		Properties pt = new Properties();
-		pt.load(this.getClass().getClassLoader().getResourceAsStream("email_template.properties"));
+		pt.load(UserServlet.class.getClassLoader().getResourceAsStream("email_template.properties"));
 		String host = pt.getProperty("host");
 		String uname = pt.getProperty("uname");
 		String password = pt.getProperty("pwd");
