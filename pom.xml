@@ -6,8 +6,11 @@
   <packaging>war</packaging>
   <name>second-hand</name>
   
+
   
   <dependencies>
+
+
    <dependency>
             <groupId>org.mongodb</groupId>
             <artifactId>mongo-java-driver</artifactId>
@@ -91,10 +94,18 @@
 </dependency>
 
 
-<dependency>
+<!-- <dependency>
     <groupId>com.google.appengine</groupId>
     <artifactId>appengine-api-1.0-sdk</artifactId>
     <version>1.9.65</version>
+</dependency> -->
+
+
+
+<dependency>
+    <groupId>javax.mail</groupId>
+    <artifactId>mail</artifactId>
+    <version>1.4.7</version>
 </dependency>
 
 <dependency>
