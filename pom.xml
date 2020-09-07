@@ -94,11 +94,11 @@
 </dependency>
 
 
- <dependency>
+<!--  <dependency>
     <groupId>com.google.appengine</groupId>
     <artifactId>appengine-api-1.0-sdk</artifactId>
     <version>1.9.65</version>
-</dependency> 
+</dependency>  -->
 
 
 <dependency>

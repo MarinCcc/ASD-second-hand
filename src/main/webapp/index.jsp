@@ -39,8 +39,10 @@
 <div class="el-header" >
 		<div class="container" style="position: relative;">
 			<ul class="nav navbar-nav navbar-right">
+				<li><a href="/saleApplication.jsp">Sale Application Page</a></li>
 				<li><a href="/index.jsp">${session_user.email}</a></li>
 				<li><a href="<c:url value='/UserServlet?method=logout'/>" >Logout</a></li>
+				
 			</ul>
 		</div>
 </div>

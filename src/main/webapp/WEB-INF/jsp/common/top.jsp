@@ -18,7 +18,7 @@
 					</c:when>
 					<c:otherwise>
 					<li>
-						  <a class="el-current-user" href="/personal.do">${sessionScope.session_user.username}</a>
+						  <a class="el-current-user" href="/personal.do">${sessionScope.session_user.email}</a>
 					</li>
 					<li><a  href="/UserServlet?method=logout">Logout</a></li>
 					</c:otherwise>
