@@ -71,17 +71,15 @@ public class UserServlet extends BaseServlet {
 		}
 		
 		// add email verification at release 1
-		Properties pt = new Properties();
-		pt.load(UserServlet.class.getClassLoader().getResourceAsStream("email_template.properties"));
-		String host = pt.getProperty("host");
-		String uname = pt.getProperty("uname");
-		String password = pt.getProperty("pwd");
-		String from = pt.getProperty("from");
+//		Properties pt = new Properties();
+//		pt.load(UserServlet.class.getClassLoader().getResourceAsStream("email_template.properties"));
+		String host = "smtp.163.com";
+		String uname = "marin1113";
+		String password = "CESUCIWLBOMGSXCA";
+		String from = "marin1113@163.com";
 		String to = user.getEmail();
-		String subject =  pt.getProperty("subject");
-		String content =  pt.getProperty("content");
-
-		
+		String subject =  "Confirm your account on Second-Hand-Market";
+		String content = "<a href=\"http://localhost:8080/UserServlet?method=active&code={0}\">Click here to active your account</a>";
 		content = MessageFormat.format(content, user.getVerifyCode());
 		Session session = MailUtils.createSession(host, uname, password);
 		Mail mail = new Mail(from,to,subject,content);
