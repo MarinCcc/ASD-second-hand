@@ -79,8 +79,11 @@ public class UserServlet extends BaseServlet {
 		String from = "marin1113@163.com";
 		String to = user.getEmail();
 		String subject =  "Confirm your account on Second-Hand-Market";
-		String content = "<a href=\"http://localhost:8080/UserServlet?method=active&code={0}\">Click here to active your account</a>";
-		content = MessageFormat.format(content, user.getVerifyCode());
+		String content = "<a href=\"http://{0}/UserServlet?method=active&code={1}\">Click here to active your account</a>";
+		
+		content = MessageFormat.format(content,request.getServerName(), user.getVerifyCode());
+//		System.out.println(request.getServerPort());
+		System.out.println(content);
 		Session session = MailUtils.createSession(host, uname, password);
 		Mail mail = new Mail(from,to,subject,content);
 		try {
@@ -123,4 +126,6 @@ public class UserServlet extends BaseServlet {
 		}
 	
 	}
+	
+	
 }
