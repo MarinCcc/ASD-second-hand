@@ -70,9 +70,7 @@ public class UserServlet extends BaseServlet {
 			return "f:/register.jsp";
 		}
 		
-		// add email verification at release 1
-//		Properties pt = new Properties();
-//		pt.load(UserServlet.class.getClassLoader().getResourceAsStream("email_template.properties"));
+		
 		String host = "smtp.163.com";
 		String uname = "marin1113";
 		String password = "CESUCIWLBOMGSXCA";
@@ -82,8 +80,6 @@ public class UserServlet extends BaseServlet {
 		String content = "<a href=\"http://{0}/UserServlet?method=active&code={1}\">Click here to active your account</a>";
 		
 		content = MessageFormat.format(content,request.getServerName(), user.getVerifyCode());
-//		System.out.println(request.getServerPort());
-		System.out.println(content);
 		Session session = MailUtils.createSession(host, uname, password);
 		Mail mail = new Mail(from,to,subject,content);
 		try {
@@ -94,7 +90,6 @@ public class UserServlet extends BaseServlet {
 			throw new RuntimeException(e);
 		}
 		
-//		request.setAttribute("msg", "Registration successfully!");
 		
 		request.setAttribute("msg", "Registered successfully, please check the activation information in the email");
 		return "f:/msg.jsp";
