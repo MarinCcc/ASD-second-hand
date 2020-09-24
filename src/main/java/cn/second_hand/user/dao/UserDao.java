@@ -16,7 +16,7 @@ public class UserDao {
 	private MongoDatabase database = MongoDBUtils.getConnect();
 	private MongoCollection<Document> collection = database.getCollection("customer");
 	public void register(User user) {
-		collection.insertOne(new Document("email",user.getEmail()).append("password", user.getPassword()).append("verifyCode", user.getVerifyCode()).append("status", false));
+		collection.insertOne(new Document("email",user.getEmail()).append("password", user.getPassword()).append("verifyCode", user.getVerifyCode()).append("activeStatus", false).append("saleApplyStatus", false));
 	}
 
 	public Document findByEmail(String email) {
@@ -33,8 +33,8 @@ public class UserDao {
 		return document;
 	}
 	
-	public void updateState(String code,boolean state) {
-		UpdateResult result = collection.updateOne(Filters.eq("verifyCode", code), new Document("$set",new Document("status",true)));
+	public void updateActiveState(String code,boolean state) {
+		 collection.updateOne(Filters.eq("verifyCode", code), new Document("$set",new Document("activeStatus",state)));
 	}
 
 }

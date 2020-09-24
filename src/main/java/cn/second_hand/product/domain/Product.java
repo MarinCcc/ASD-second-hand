@@ -1,43 +1,61 @@
 package cn.second_hand.product.domain;
 
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.bson.types.ObjectId;
+
+import com.alibaba.fastjson.JSONObject;
 
 public class Product {
-	private String name;
-	private String categories;
-	private double price;
+	private ObjectId oid;
+	public ObjectId getOid() {
+		return oid;
+	}
+	public void setOid(ObjectId oid) {
+		this.oid = oid;
+	}
+	private String title;
+	private String category;
+	private int price;
 	private String description;
 	private String picture1;
 	private String picture2;
-	private boolean bargainStatus;
+	private boolean bargainStatus =false;
 	private String applierEmail;
-	private boolean applierStatus;
+	private boolean applyStatus;
 	private String remark;
 	private Date applyTime;
 	private Date auditTime;
-	public String getName() {
-		return name;
+	private int auditState;
+	private boolean isHide;
+	public boolean isHide() {
+		return isHide;
 	}
-	@Override
-	public String toString() {
-		return "Product [name=" + name + ", categories=" + categories + ", price=" + price + ", description="
-				+ description + ", picture1=" + picture1 + ", picture2=" + picture2 + ", bargainStatus=" + bargainStatus
-				+ ", applierEmail=" + applierEmail + ", applierStatus=" + applierStatus + ", remark=" + remark
-				+ ", applyTime=" + applyTime + ", auditTime=" + auditTime + "]";
+	public void setHide(boolean isHide) {
+		this.isHide = isHide;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public int getAuditState() {
+		return auditState;
 	}
-	public String getCategories() {
-		return categories;
+	public void setAuditState(int auditState) {
+		this.auditState = auditState;
 	}
-	public void setCategories(String categories) {
-		this.categories = categories;
+	public String getTitle() {
+		return title;
 	}
-	public double getPrice() {
+	
+	
+	
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	
+	public int getPrice() {
 		return price;
 	}
-	public void setPrice(double price) {
+	public void setPrice(int price) {
 		this.price = price;
 	}
 	public String getDescription() {
@@ -70,11 +88,11 @@ public class Product {
 	public void setApplierEmail(String applierEmail) {
 		this.applierEmail = applierEmail;
 	}
-	public boolean isApplierStatus() {
-		return applierStatus;
+	public boolean isApplyStatus() {
+		return applyStatus;
 	}
-	public void setApplierStatus(boolean applierStatus) {
-		this.applierStatus = applierStatus;
+	public void setApplyStatus(boolean applierStatus) {
+		this.applyStatus = applierStatus;
 	}
 	public String getRemark() {
 		return remark;
@@ -93,6 +111,35 @@ public class Product {
 	}
 	public void setAuditTime(Date auditTime) {
 		this.auditTime = auditTime;
+	}
+	
+	public String getJsonString() {
+		Map<String,Object> json = new HashMap<String,Object>();
+		json.put("oid", oid.toString());
+		json.put("applierEmail", applierEmail);
+		json.put("title", title);
+		json.put("price", price);
+		json.put("description", description);
+		json.put("bargainStatus", bargainStatus);
+		json.put("category", category);
+		json.put("picture1", picture1);
+		json.put("picture2", picture2);
+		return JSONObject.toJSONString(json);
+	}
+	
+	@Override
+	public String toString() {
+		return "Product [oid=" + oid + ", title=" + title + ", category=" + category + ", price=" + price
+				+ ", description=" + description + ", picture1=" + picture1 + ", picture2=" + picture2
+				+ ", bargainStatus=" + bargainStatus + ", applierEmail=" + applierEmail + ", applyStatus=" + applyStatus
+				+ ", remark=" + remark + ", applyTime=" + applyTime + ", auditTime=" + auditTime + ", auditState="
+				+ auditState + ", isHide=" + isHide + "]";
+	}
+	public String getCategory() {
+		return category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
 	}
 
 }

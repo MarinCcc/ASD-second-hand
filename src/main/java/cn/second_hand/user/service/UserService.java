@@ -14,10 +14,10 @@ public class UserService {
 		if(d==null) {
 			throw new UserException("Incorrect verify code!");
 		}
-		if(d.getBoolean("status").equals(true)) {
+		if(d.getBoolean("activeStatus").equals(true)) {
 			throw new UserException("You already actived account, please do not try again!");
 		}
-		dao.updateState(code, true);
+		dao.updateActiveState(code, true);
 	}
 
 	public void register(User user) throws UserException{
@@ -29,14 +29,14 @@ public class UserService {
 
 	public User login(User user) throws UserException {
 		Document d = dao.findByEmail(user.getEmail());
-		System.out.println(d.getBoolean("status"));
-		if(d==null) {
+		if(d==null) 
+		{
 			throw new UserException("Email address not exists");
 		}
 		if(!d.getString("password").equals(user.getPassword())) {
 			throw new UserException("Password is wrong");
 		}
-		if(!d.getBoolean("status")) {
+		if(!d.getBoolean("activeStatus")) {
 			throw new UserException("Sorry, you account is not actived please active first");
 		}
 		User u = new User();

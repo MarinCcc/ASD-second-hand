@@ -2,9 +2,6 @@ package cn.second_hand.user.utils;
 
 import java.io.File;
 
-/*
- * 附件类，只有文件，即附件才文件名
- */
 public class AttachBean {
 	private String cid;
 	private File file;

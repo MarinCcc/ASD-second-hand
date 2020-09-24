@@ -6,10 +6,28 @@
     <servlet-class>cn.second_hand.user.servlet.UserServlet</servlet-class>
   </servlet>
   <servlet>
-    <servlet-name>ProductServlet</servlet-name>
-    <servlet-class>cn.second_hand.product.servlet.ProductServlet</servlet-class>
+
+    <servlet-name>UpdatePictureServlet</servlet-name>
+    <servlet-class>cn.second_hand.product.servlet.UpdatePictureServlet</servlet-class>    
   </servlet>
-  
+  <servlet>
+   <servlet-name>ProductServlet</servlet-name>
+   <servlet-class>cn.second_hand.product.servlet.ProductServlet</servlet-class>   
+  </servlet>
+  <servlet>
+  <servlet-name>SaleOrderServlet</servlet-name>
+   <servlet-class>cn.second_hand.product.servlet.SaleOrderServlet</servlet-class>   
+  </servlet>
+
+<servlet-mapping>
+    <servlet-name>SaleOrderServlet</servlet-name>
+    <url-pattern>/SaleOrderServlet</url-pattern>
+  </servlet-mapping>
+<servlet-mapping>
+    <servlet-name>UpdatePictureServlet</servlet-name>
+    <url-pattern>/UpdatePictureServlet</url-pattern>
+  </servlet-mapping>
+
   <servlet-mapping>
     <servlet-name>ProductServlet</servlet-name>
     <url-pattern>/ProductServlet</url-pattern>
