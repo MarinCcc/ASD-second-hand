@@ -55,6 +55,7 @@ body {
 	text-align: center;
 	line-height: 80px;
 	font-size: 16px;
+	
 }
 
 .el-navbar .navbar-nav>li>a:HOVER {
@@ -271,3 +272,5 @@ body {
 	background: #008fd9;
 	text-decoration:none;
 }
+
+
