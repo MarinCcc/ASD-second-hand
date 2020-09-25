@@ -13,7 +13,7 @@
 				<li><a href="/index.jsp">MainPage</a></li>
 					
 					<li>
-						  <a class="el-current-user" href="/personal.do">${sessionScope.session_manager.email}</a>
+						  <a class="el-current-user" href="/personal.do">${sessionScope.session_manager.name}</a>
 					</li>
 					<li><a  href="/ManagerServlet?method=logout">Logout</a></li>
 					

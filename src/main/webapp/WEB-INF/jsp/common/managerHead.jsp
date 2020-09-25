@@ -11,10 +11,10 @@
 			</a>
 		</div>
 		<ul class="nav navbar-nav">
-			<li id="index" ><a href="/index.jsp">MainPage</a></li>
+			<li id="index" ><a href="/managerManagement.jsp">MainPage</a></li>
 			<li id="Monitoring"><a href="/">Monitoring</a></li>
 			<li id="Categories"><a href="/">Categories</a></li>
-			<li id="personal"><a href="/p">Personal Information</a></li>
+			<li id="personal"><a href="/personalInfo.jsp">Personal Information</a></li>
 			
 		</ul>
 	</div>

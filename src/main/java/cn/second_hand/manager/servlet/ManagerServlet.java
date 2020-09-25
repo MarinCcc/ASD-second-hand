@@ -30,6 +30,7 @@ private ManagerService ManagerService = new ManagerService();
 		Manager manager = new Manager();
 		manager.setEmail(request.getParameter("email"));
 		manager.setPassword(request.getParameter("password"));
+		manager.setName(request.getParameter("name"));
 		try {
 			Manager cmanager = ManagerService.login(manager);
 			request.getSession().setAttribute("session_manager", cmanager);

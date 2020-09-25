@@ -24,6 +24,8 @@ public class ManagerService {
 	     Manager m = new Manager();
 		m.setEmail(d.getString("email"));
 		m.setPassword(d.getString("password"));
+		m.setName(d.getString("name"));
+		
 		return m;
 	}
 

@@ -15,7 +15,7 @@
 		<a href="#"><span class="text-title">Monitoring</span></a>
 		<ul class="in">
 			<li name="allProducts"><a href="#">view all products</a></li>
-			<li name="Transation record"><a href="/">Transation record</a></li>
+			<li name="Transation record"><a href="/">view pending order</a></li>
 			<li name="seller"><a href="/">view all sellers</a></li>
 			<li name="buyer"><a href="/">view all buyers</a></li>
 			

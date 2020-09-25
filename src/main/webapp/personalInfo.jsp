@@ -76,31 +76,57 @@
 </head>
 <body>
 
+     <div class="container">
+		<div class="row">
+			<div class="column3">
+ 
+				
 				<div class="col-sm-3">
 					<%@ include file="WEB-INF/jsp/common/managerMenu.jsp"%>
 				</div>
 				
 				
-						
-						
-	
- <c:choose>
-   <c:when test="${empty sessionScope.session_manager }">
-	
-	&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-	You are not the Manage, Please leave the page 
-	
-	</c:when>
-	
-<c:otherwise>
-	
-	&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
- <h1>welcome Manager ${session_manager.name}</h1>>
-	
-</c:otherwise>
-</c:choose>
-	
+				<div class="column2">
+				<div class="panel panel-default">
+					<div class="panel-heading">Personal information</div>
 					
+					
+				
+						
+						
+<form class="form-horizontal" id="realAuthForm" method="post" action="/ProductServlet?method=saleApplication" novalidate="novalidate">
+	 <fieldset>		
+	 
+	 <div>				
+	<h1>This is your information</h1>					
+	<div>						
+	   <label>Name: ${session_manager.name}</label>
+       <div>
+      <label> Email: ${session_manager.email} </label>>
+       
+       <div>
+       
+        
+      
+       
+</fieldset>
+
+</form>
+	
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	
+	
+	
+			
+
+			
+				
+	
 </body>
 <%@ include file="WEB-INF/jsp/common/footer.jsp"%>
 </html>
