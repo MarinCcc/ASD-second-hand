@@ -16,65 +16,14 @@
 <script type="text/javascript" src="/js/plugins/uploadify/jquery.uploadify.min.js"></script>
 <script type="text/javascript" src="/js/plugins/jquery.form.js"></script>
 
-<style type="text/css">
-			#realAuthForm input ,#realAuthForm select{
-				width: 260px;
-			}
-			.picture{
-				width: 160px;
-				height: 150px;
-				float:left;
-				margin-right:10px;
-				border: 1px solid #e3e3e3;
-				text-align: center;
-				padding: 5px;
-			}
-			.uploadImg{
-				width: 120px;
-				height: 100px;
-				margin-top: 5px;
-			}
-			.swfupload{
-				left: 0px;
-				cursor: pointer;
-			}
-			.uploadify{
-				height: 20px;
-				font-size:13px;
-				line-height:20px;
-				text-align:center;
-				position: relative;
-				margin-left:auto;
-				margin-right:auto;
-				cursor:pointer;
-				background-color: #337ab7;
-			    border-color: #2e6da4;
-			    color: #fff;
-			}
-			#viewExample{
-				position: relative;
-				left: 50px;
-				top: 60px;
-			}
-			.uploadExample{
-				width: 200px;
-				height: 130px;
-				margin-bottom: 20px;
-			}
-		</style>
-		
-		<script type="text/javascript">
-		
-
-		
-		
-		</script>
 
 <%@ include file="WEB-INF/jsp/common/managerTop.jsp"%>
 <%@ include file="WEB-INF/jsp/common/managerHead.jsp"%>
 
 </head>
 <body>
+
+
 
      <div class="container">
 		<div class="row">
@@ -86,9 +35,9 @@
 				</div>
 				
 				
-				<div class="column2">
+				<div class="col-sm-9">
 				<div class="panel panel-default">
-					<div class="panel-heading">Personal information</div>
+				<div class="panel-heading">Personal Information</div>
 					
 					
 				
@@ -97,12 +46,12 @@
 <form class="form-horizontal" id="realAuthForm" method="post" action="/ProductServlet?method=saleApplication" novalidate="novalidate">
 	 <fieldset>		
 	 
-	 <div>				
+	 <div >				
 	<h1>This is your information</h1>					
-	<div>						
+	<div >						
 	   <label>Name: ${session_manager.name}</label>
        <div>
-      <label> Email: ${session_manager.email} </label>>
+      <label> Email: ${session_manager.email} </label>
        
        <div>
        
@@ -118,7 +67,7 @@
 	</div>
 	</div>
 	</div>
-	</div>
+
 	
 	
 	

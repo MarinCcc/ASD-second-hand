@@ -61,7 +61,7 @@ x
 
 <script type="text/javascript">
 		$(function() {
-			$('#pagination').twbsPagination(
+			$('#pagination').twbsPagination({
 				totalPages : ${pageResult.totalPage},
 				startPage : ${pageResult.currentPage},
 				visiblePages : 5,

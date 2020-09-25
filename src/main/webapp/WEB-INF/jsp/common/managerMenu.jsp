@@ -5,10 +5,9 @@
 	
 <ul id="menu" class="list-group">
 	<li class="list-group-item">
-		<a href="javascript:;"><span>Personal detail</span></a>
+		<a href="javascript:;"><span>Personal Information</span></a>
 		<ul>
-			<li name="infor"><a href="/"><span>Information</span></a></li>
-			<li name="ld"><a href="#"><span>Login detail</span></a></li>
+			<li name="ld"><a href="personalInfo.jsp"><span>Login detail</span></a></li>
 		</ul>
 	</li>
 	<li class="list-group-item">
@@ -30,8 +29,3 @@
 	</li>
 </ul>
 
-<!-- <#if currentMenu??>
-<script type="text/javascript">
-	$(".list-group-item li[name=${currentMenu}]").addClass("active");
-</script>
-</#if> -->

@@ -33,7 +33,7 @@
 <div class="el-header" >
 		<div class="container" style="position: relative;">
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="/index.jsp">HomePage</a></li>
+				<li><a href="/msg.jsp">HomePage</a></li>
 				
 			</ul>
 		</div>
