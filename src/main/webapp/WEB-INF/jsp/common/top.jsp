@@ -13,7 +13,7 @@
 				<li><a href="/index.jsp">HomePage</a></li>
 					<c:choose>
    					<c:when test="${empty sessionScope.session_user }">
-					<li><a href="/login.html">Login</a></li>
+					<li><a href="/login.jsp">Login</a></li>
 					<li><a href="/register.html">Register</a></li>
 					</c:when>
 					<c:otherwise>
