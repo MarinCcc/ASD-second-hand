@@ -10,18 +10,10 @@
 	<div class="el-header">
 		<div class="container" style="position: relative;">
 			<ul class="nav navbar-nav navbar-right">
-<<<<<<< HEAD
 				<c:choose>
 					<c:when test="${empty sessionScope.session_user }">
 						<li><a href="/login.jsp">Login</a></li>
 						<li><a href="/register.jsp">Register</a></li>
-=======
-				<li><a href="/index.jsp">HomePage</a></li>
-					<c:choose>
-   					<c:when test="${empty sessionScope.session_user }">
-					<li><a href="/login.jsp">Login</a></li>
-					<li><a href="/register.html">Register</a></li>
->>>>>>> 2b74d1eea3fb540f8345cf744bac4b207105c65c
 					</c:when>
 					<c:otherwise>
 						<li><a class="el-current-user" href="/personal.do">${sessionScope.session_user.email}</a>

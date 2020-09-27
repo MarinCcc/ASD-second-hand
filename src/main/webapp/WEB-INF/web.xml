@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
 
 <web-app xmlns="http://java.sun.com/xml/ns/javaee"
 
@@ -67,58 +66,3 @@
 		<welcome-file>index.htm</welcome-file>
 	</welcome-file-list>
 </web-app>
-=======
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
-  <display-name>second-hand</display-name>
-  <servlet>
-    <servlet-name>UserServlet</servlet-name>
-    <servlet-class>cn.second_hand.user.servlet.UserServlet</servlet-class>
-  </servlet>
-  <servlet>
-
-    <servlet-name>UpdatePictureServlet</servlet-name>
-    <servlet-class>cn.second_hand.product.servlet.UpdatePictureServlet</servlet-class>    
-  </servlet>
-  <servlet>
-   <servlet-name>ProductServlet</servlet-name>
-   <servlet-class>cn.second_hand.product.servlet.ProductServlet</servlet-class>   
-  </servlet>
-  <servlet>
-  <servlet-name>SaleOrderServlet</servlet-name>
-   <servlet-class>cn.second_hand.product.servlet.SaleOrderServlet</servlet-class>   
-  </servlet>
-
-<servlet-mapping>
-    <servlet-name>SaleOrderServlet</servlet-name>
-    <url-pattern>/SaleOrderServlet</url-pattern>
-  </servlet-mapping>
-<servlet-mapping>
-    <servlet-name>UpdatePictureServlet</servlet-name>
-    <url-pattern>/UpdatePictureServlet</url-pattern>
-  </servlet-mapping>
-
-  <servlet-mapping>
-    <servlet-name>ProductServlet</servlet-name>
-    <url-pattern>/ProductServlet</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>UserServlet</servlet-name>
-    <url-pattern>/UserServlet</url-pattern>
-  </servlet-mapping>
-  
-  <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-  </welcome-file-list>
-  <servlet>
-    <description></description>
-    <display-name>ManagerServlet</display-name>
-    <servlet-name>ManagerServlet</servlet-name>
-    <servlet-class>cn.second_hand.manager.servlet.ManagerServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ManagerServlet</servlet-name>
-    <url-pattern>/ManagerServlet</url-pattern>
-  </servlet-mapping>
-</web-app>
->>>>>>> 2b74d1eea3fb540f8345cf744bac4b207105c65c
