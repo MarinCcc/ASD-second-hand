@@ -3,7 +3,8 @@ package cn.second_hand;
 import org.junit.Test;
 
 import cn.second_hand.cart.dao.CartDao;
-import cn.second_hand.cart.domain.Cart;
+import cn.second_hand.product.dao.OrderDao;
+import cn.second_hand.query.AuditQueryObject;
 import cn.second_hand.user.dao.UserDao;
 import cn.second_hand.user.utils.MongoDBUtils;
 
@@ -14,6 +15,8 @@ public class UnitTest {
 	UserDao userDao = new UserDao();
 	
 	CartDao carDao = new CartDao();
+	
+	OrderDao orderDao = new OrderDao();
 	
 //	@Test
 //	public void testMangoDBConnection() {
@@ -41,7 +44,7 @@ public class UnitTest {
 //	}
 	
 	@Test
-	public void testsaveCart() {
-		carDao.saveCart(new Cart());
+	public void testgetBuyersOrderList() {
+		orderDao.getBuyersOrderList(new AuditQueryObject());
 	}
 }
