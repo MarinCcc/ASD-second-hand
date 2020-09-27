@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ page isELIgnored="false"%>
+<!DOCTYPE html>
 <html>
+<head>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Online Second-Hand Trading Market</title>
@@ -21,30 +21,34 @@
 </script>
 
 <%@ include file="WEB-INF/jsp/common/top.jsp"%>
-<%@ include file="WEB-INF/jsp/common/head.jsp"%>
 
 </head>
+</head>
 <body>
-
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-3">
-				<%@ include file="WEB-INF/jsp/common/leftMenu.jsp"%>
+	<div style="width: 1300px; background-color: burlywood;">
+		<div style="width: 80%; margin: 0 auto">
+			<a href="home.jsp">home</a>
+		</div>
+		<div>
+			<div
+				style="float: left; margin-left: 25px; width: 300px; height: 300px">
+				<a href="detail?id=1"> <img alt="earphone" src="img/earphone.jpg" width="100%" height="100%">
+				</a>
 			</div>
-			<c:choose>
-			<c:when test="${empty session_user }">
-				<h1>
-					
-					Please login first</h1>
-			</c:when>
-			<c:otherwise>
-				<h1>
-					Hello ${session_user.email}</h1>
-			</c:otherwise>
-			</c:choose>
+			<div
+				style="float: left; margin-left: 25px; width: 300px; height: 300px">
+				<a href="detail?id=2"> <img alt="iwatch" src="img/iwatch.jpg" width="100%" height="100%">
+				</a>
+			</div>
+			<div
+				style="float: left; margin-left: 25px; width: 300px; height: 300px">
+				<a href="detail?id=3"> <img alt="pc" src="img/pc.jpg" width="100%" height="100%"></a>
+			</div>
+			<div
+				style="float: left; margin-left: 25px; width: 300px; height: 300px">
+				<a href="detail?id=4"> <img alt="ipad" src="img/ipad.jpg" width="100%" height="100%"></a>
+			</div>
 		</div>
 	</div>
-
 </body>
-<%@ include file="WEB-INF/jsp/common/footer.jsp"%>
 </html>

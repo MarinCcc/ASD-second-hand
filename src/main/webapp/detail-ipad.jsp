@@ -35,7 +35,7 @@ h6 {
 	%>
 	<div style="width: 1300px; margin: 0 auto">
 		<div style="width: 850px; margin: 0 auto;background-color: burlywood">
-			<a href="home.jsp" style="margin-left: 200px">home</a>
+			<a href="index.jsp" style="margin-left: 200px">home</a>
 		</div>
 		<div
 			style="width: 850px; height: 400px; border: 1px solid #000; margin: 0 auto; background-color: burlywood">
