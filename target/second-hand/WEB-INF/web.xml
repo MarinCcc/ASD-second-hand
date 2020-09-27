@@ -10,21 +10,22 @@ version="2.5">
 	<display-name>second-hand</display-name>
   <servlet>
     <servlet-name>UserServlet</servlet-name>
-    <servlet-class>cn.second_hand.user.servlet.UserServlet</servlet-class>   
+    <servlet-class>cn.second_hand.user.servlet.UserServlet</servlet-class>    
   </servlet>
   <servlet>
-   <servlet-name>ConnServlet</servlet-name>
-    <servlet-class>dra.demo.controller.ConnServlet</servlet-class>
+   <servlet-name>ProductServlet</servlet-name>
+   <servlet-class>cn.second_hand.product.servlet.ProductServlet</servlet-class>   
   </servlet>
+ 
 
 
+  <servlet-mapping>
+    <servlet-name>ProductServlet</servlet-name>
+    <url-pattern>/ProductServlet</url-pattern>
+  </servlet-mapping>
   <servlet-mapping>
     <servlet-name>UserServlet</servlet-name>
     <url-pattern>/UserServlet</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>ConnServlet</servlet-name>
-    <url-pattern>/ConnServlet</url-pattern>
   </servlet-mapping>
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>

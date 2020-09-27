@@ -68,7 +68,7 @@
 	  <br>  <br>
 	  <div class="abc">
 	  Enter to :
-	  <a href="<c:url value='/regist.jsp'/>">Sign-up</a>
+	  <a href="<c:url value='/register.jsp'/>">Sign-up</a>
 	  </div>
 	  <br><br><br>
 	  
