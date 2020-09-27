@@ -44,7 +44,7 @@ public class UnitTest {
 //	}
 	
 	@Test
-	public void testgetBuyersOrderList() {
-		orderDao.getBuyersOrderList(new AuditQueryObject());
+	public void testgetSellerOrderList() {
+		orderDao.getSellerOrderList(new AuditQueryObject());
 	}
 }
