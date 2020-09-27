@@ -209,6 +209,11 @@
 			<scope>test</scope>
 			<type>jar</type>
 		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.25</version>
+		</dependency>
 		<!-- <dependency> <groupId>org.seleniumhq.selenium</groupId> <artifactId>selenium-firefox-driver</artifactId> 
 			<version>3.141.59</version> </dependency> <dependency> <groupId>org.seleniumhq.selenium</groupId> 
 			<artifactId>selenium-java</artifactId> <version>3.141.59</version> </dependency> -->
