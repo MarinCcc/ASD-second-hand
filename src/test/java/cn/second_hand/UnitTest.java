@@ -12,10 +12,10 @@ public class UnitTest {
 	
 	UserDao userDao = new UserDao();
 	
-	@Test
-	public void testMangoDBConnection() {
-		mangoDb.getConnect();
-	}
+//	@Test
+//	public void testMangoDBConnection() {
+//		mangoDb.getConnect();
+//	}
 	
 	@Test
 	public void testFindByEmail() {
