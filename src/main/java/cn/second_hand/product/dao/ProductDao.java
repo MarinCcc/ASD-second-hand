@@ -37,8 +37,8 @@ public class ProductDao {
 	}
 
 	public List<Product> query(AuditQueryObject auditQueryObject) {
-		FindIterable<Document> findIterable = productCollection.find(Filters.eq("isHide", false)).limit(auditQueryObject.getPageSize())
-				.skip(auditQueryObject.getStart());
+		FindIterable<Document> findIterable = productCollection.find(Filters.eq("isHide", false))
+				.limit(auditQueryObject.getPageSize()).skip(auditQueryObject.getStart());
 		List<Product> list = new ArrayList<Product>();
 		for (Document d : findIterable) {
 			Product p = new Product();
@@ -61,7 +61,7 @@ public class ProductDao {
 	}
 
 	public List<Product> query(AuditQueryObject auditQueryObject, Integer state) {
-		Bson filter = Filters.and( Filters.eq("isHide", false),Filters.eq("auditState", state));
+		Bson filter = Filters.and(Filters.eq("isHide", false), Filters.eq("auditState", state));
 		FindIterable<Document> findIterable = productCollection.find(filter).limit(auditQueryObject.getPageSize())
 				.skip(auditQueryObject.getStart());
 		List<Product> list = new ArrayList<Product>();
@@ -90,13 +90,15 @@ public class ProductDao {
 		return (int) productCollection.count(filter);
 	}
 
-	public int queryApplyingListForCount(AuditQueryObject auditQueryObject,String currentUserEmail) {
-		Bson filter = Filters.and(Filters.eq("auditState", 0),Filters.eq("applyEmail", currentUserEmail), Filters.eq("isHide", false));
+	public int queryApplyingListForCount(AuditQueryObject auditQueryObject, String currentUserEmail) {
+		Bson filter = Filters.and(Filters.eq("auditState", 0), Filters.eq("applyEmail", currentUserEmail),
+				Filters.eq("isHide", false));
 		return (int) productCollection.count(filter);
 	}
 
-	public List<Product> queryApplyingList(AuditQueryObject auditQueryObject,String currentUserEmail) {
-		Bson filter = Filters.and(Filters.eq("auditState", 0), Filters.eq("isHide", false),Filters.eq("applyEmail", currentUserEmail));
+	public List<Product> queryApplyingList(AuditQueryObject auditQueryObject, String currentUserEmail) {
+		Bson filter = Filters.and(Filters.eq("auditState", 0), Filters.eq("isHide", false),
+				Filters.eq("applyEmail", currentUserEmail));
 		FindIterable<Document> findIterable = productCollection.find(filter).limit(auditQueryObject.getPageSize())
 				.skip(auditQueryObject.getStart());
 		List<Product> list = new ArrayList<Product>();
@@ -111,7 +113,7 @@ public class ProductDao {
 			p.setDescription(d.getString("description"));
 			p.setPicture1(d.getString("picture1"));
 			p.setPicture2(d.getString("picture2"));
-			p.setPrice( d.getInteger("price"));
+			p.setPrice(d.getInteger("price"));
 			p.setTitle(d.getString("title"));
 			p.setAuditState(d.getInteger("auditState"));
 			p.setHide(d.getBoolean("isHide"));
@@ -123,18 +125,40 @@ public class ProductDao {
 
 	public void editSaleApplyingListPage(Product product) {
 		ObjectId oid = product.getOid();
-		Bson filter = Filters.eq("_id",oid);
-		productCollection.updateOne(filter, new Document("$set",new Document("title",product.getTitle())
-				.append("bargainStatus", product.isBargainStatus())
-				.append("category", product.getCategory())
-				.append("description", product.getDescription())
-				.append("price", product.getPrice())
-				.append("picture1", product.getPicture1())
-				.append("picture2", product.getPicture2())));
+		Bson filter = Filters.eq("_id", oid);
+		productCollection.updateOne(filter,
+				new Document("$set",
+						new Document("title", product.getTitle()).append("bargainStatus", product.isBargainStatus())
+								.append("category", product.getCategory())
+								.append("description", product.getDescription()).append("price", product.getPrice())
+								.append("picture1", product.getPicture1()).append("picture2", product.getPicture2())));
 	}
 
 	public void hideSaleApplication(ObjectId id) {
-		Bson filter = Filters.eq("_id",id);
-		productCollection.updateOne(filter,new Document("$set",new Document("isHide",true)));
+		Bson filter = Filters.eq("_id", id);
+		productCollection.updateOne(filter, new Document("$set", new Document("isHide", true)));
+	}
+
+	public Product queryById(ObjectId productId) {
+		Bson filter = Filters.eq("_id", productId);
+		Document d = productCollection.find(filter).first();
+		Product p = null;
+		if (null != d) {
+			p = new Product();
+			p.setOid(d.getObjectId("_id"));
+			p.setApplierEmail(d.getString("applyEmail"));
+			p.setApplyStatus(d.getBoolean("applyStatus"));
+			p.setApplyTime(d.getDate("applyTime"));
+			p.setBargainStatus(d.getBoolean("bargainStatus"));
+			p.setCategory(d.getString("category"));
+			p.setDescription(d.getString("description"));
+			p.setPicture1(d.getString("picture1"));
+			p.setPicture2(d.getString("picture2"));
+			p.setPrice(d.getInteger("price"));
+			p.setTitle(d.getString("title"));
+			p.setAuditState(d.getInteger("auditState"));
+			p.setHide(d.getBoolean("isHide"));
+		}
+		return p;
 	}
 }

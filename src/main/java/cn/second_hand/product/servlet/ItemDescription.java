@@ -25,7 +25,7 @@ import cn.second_hand.product.domain.Product;
  * Servlet implementation class OnlineTicketing
  */
 @WebServlet("/detail")
-public class OnlineTicketing extends HttpServlet {
+public class ItemDescription extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	private static MongoDatabase mongoDatabase;
@@ -33,7 +33,7 @@ public class OnlineTicketing extends HttpServlet {
 	/**
 	 * Default constructor.
 	 */
-	public OnlineTicketing() {
+	public ItemDescription() {
 		// TODO Auto-generated constructor stub
 	}
 
