@@ -136,6 +136,8 @@
 		}
 </script>
 
+<%@ include file="WEB-INF/jsp/common/top.jsp"%>
+<%@ include file="WEB-INF/jsp/common/head.jsp"%>
 </head>
 <body>
 

@@ -15,15 +15,16 @@ import cn.second_hand.user.utils.MongoDBUtils;
 public class UserDao {
 	private MongoDatabase database = MongoDBUtils.getConnect();
 	private MongoCollection<Document> collection = database.getCollection("customer");
-	public void register(User user) {
-		collection.insertOne(new Document("email",user.getEmail()).append("password", user.getPassword()).append("verifyCode", user.getVerifyCode()).append("activeStatus", false).append("saleApplyStatus", false));
-	}
-
+	
 	public Document findByEmail(String email) {
 		Bson filter = Filters.eq("email", email);
 		FindIterable findIterable = collection.find(filter);
 		Document document = (Document) findIterable.first();
 		return document;
+	}
+	
+	public void register(User user) {
+		collection.insertOne(new Document("email",user.getEmail()).append("password", user.getPassword()).append("verifyCode", user.getVerifyCode()).append("activeStatus", false).append("saleApplyStatus", false));
 	}
 	
 	public Document findByVerifyCode(String code) {

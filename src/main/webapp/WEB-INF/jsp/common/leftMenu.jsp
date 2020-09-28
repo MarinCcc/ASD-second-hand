@@ -7,7 +7,7 @@
 	<li class="list-group-item">
 		<a href="javascript:;"><span>Purchase</span></a>
 		<ul>
-			<li name="bid"><a href="/ProductServlet?method=auditSaleApplyPage"><span>My Order</span></a></li>
+			<li name="bid"><a href="/OrderServlet?method=getOrderList&typeId=1"><span>My Order</span></a></li>
 			<li name="receive"><a href="#"><span>Pending order</span></a></li>
 		</ul>
 	</li>
@@ -24,7 +24,7 @@
 	<li class="list-group-item">
 		<a href="#"><span>Sale</span></a>
 		<ul class="in">
-			<li name="accountFlow_list"><a href="">My Order</a></li>
+			<li name="accountFlow_list"><a href="/OrderServlet?method=getOrderList&typeId=2">My Order</a></li>
 			<li name="recharge"><a href="/">Pending order</a></li>
 			<li name="auditSaleApplyPage"><a href="/ProductServlet?method=saleApplyingListPage">Applying order</a></li>
 			<li name="saleApply"><a href="/saleApplication.jsp">Sale Apply</a></li>
