@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Second-Hand->Login</title>
+<title>Second-Hand</title>
 <link rel="stylesheet" href="/js/bootstrap-3.3.2-dist/css/bootstrap.css" type="text/css" />
 <link rel="stylesheet" href="/css/core.css" type="text/css" />
 
@@ -24,7 +24,7 @@
 </style>
 
 <script type="text/javascript">
-
+	
 </script>
 
 </head>
@@ -52,35 +52,29 @@
 
 	<div class="container">  
 		<form id="loginForm" class="form-horizontal el-login-form" action="/UserServlet" method="post" >
-		<input type = "hidden" name="method" value="login">
+		<input type = "hidden" name="method" value="forgotPassword">
 		<br>
-			<p class="h2" style="margin: 10px 10px 20px 110px;color:#000;">&emsp;Sign-In</p> 
+			<p class="h2" style="margin: 10px 10px 20px 40px;color:#000;">&emsp;Forgot your password?</p> 
+			<p class="h4" style="margin: 10px 10px 20px 30px;color:#000;">&emsp;Type your email address to get reset password email</p>
+			<br> 
 			<div class="form-group">
 				<label class="control-label col-sm-2">Email</label>
 				<div class="col-sm-10">
-					<input type="text" autocomplete="off" name="email" class="form-control" value="${user.email }"/>
+					<input type="text" autocomplete="off" name="email" class="form-control" value=""/>
+					<p style="color: red; font-weight: 900">${msg }</p>	
 				</div> 
 			</div>
 			<br>
-			<div class="form-group">
-				<label class="control-label col-sm-2">Password</label>
-				<div class="col-sm-10">
-					<input type="password" autocomplete="off" name="password" class="form-control" value="${user.password }" />
-					<p style="color: red; font-weight: 900">${msg }</p>	
-				</div>
-			</div>
 			<br>
 			<div class="form-gorup">
 				<div class="col-sm-offset-3">
-					<button type="submit" class="btn btn-success" style="width: 100px;">
-						　Sign in
+					<button type="submit" class="btn btn-success" style="width: 150px;">
+						　Send email
 					</button>
 					&emsp;&emsp;&emsp;&emsp;
-					New customer?<a href="/register.jsp"> Start here.</a>
+					<a href="/login.jsp"> Return to Sign in.</a>
 				</div>
 				<br>
-				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-				<a href="/forgotPassword.jsp"> Forgot password?</a>
 				<br><br>
 			</div>
 		</form>
