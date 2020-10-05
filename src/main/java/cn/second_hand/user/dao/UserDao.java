@@ -38,4 +38,19 @@ public class UserDao {
 		 collection.updateOne(Filters.eq("verifyCode", code), new Document("$set",new Document("activeStatus",state)));
 	}
 
+	public void forgotPassword(String userEmail, String resetCode) {
+		 collection.updateOne(Filters.eq("email", userEmail), new Document("$set",new Document("passwordResetCode",resetCode)));
+	}
+
+	public Document findByPasswordResetCode(String code) {
+		Bson filter = Filters.eq("passwordResetCode", code);
+		FindIterable findIterable = collection.find(filter);
+		Document document = (Document) findIterable.first();
+		return document;
+	}
+
+	public void resetPassword(String code, String password) {
+		 collection.updateOne(Filters.eq("passwordResetCode", code), new Document("$set",new Document("password",password).append("passwordResetCode", null)));
+	}
+
 }
