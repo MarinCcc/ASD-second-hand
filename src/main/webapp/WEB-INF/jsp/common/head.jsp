@@ -11,15 +11,11 @@
 			</a>
 		</div>
 		<ul class="nav navbar-nav">
-			<li id="index" ><a href="/index.jsp">ShoppingPage</a></li>
+			<li id="ShoppingPage" ><a href="/ProductServlet?method=allProductListPage">ShoppingPage</a></li>
 			<li id="invest"><a href="/">Purchase Order</a></li>
 			<li id="borrow"><a href="/">Sale Order</a></li>
-			<li id="personal"><a href="/">Personal Information</a></li>
 			<li><a href="#">About Us</a></li>
 		</ul>
 	</div>
 </div>
 
-<script type="text/javascript">
-	$("#"+"${currentNav}").addClass("active");
-</script>

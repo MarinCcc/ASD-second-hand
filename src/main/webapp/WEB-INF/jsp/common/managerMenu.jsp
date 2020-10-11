@@ -17,6 +17,7 @@
 			<li name="Transation record"><a href="/">view pending order</a></li>
 			<li name="seller"><a href="/">view all sellers</a></li>
 			<li name="buyer"><a href="/">view all buyers</a></li>
+			<li name="auditSaleApplyPage"><a href="/ProductServlet?method=auditSaleApplyPage">audit Sale Application</a></li>
 			
 		</ul>
 	</li>

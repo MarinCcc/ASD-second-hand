@@ -111,7 +111,7 @@ public class UserServlet extends BaseServlet {
 		try {
 			User currentUser = userService.login(user);
 			request.getSession().setAttribute("session_user", currentUser);
-			return "r:/index.jsp";
+			return "r:/ProductServlet?method=allProductListPage";
 		} catch (UserException e) {
 			request.setAttribute("msg", e.getMessage());
 			request.setAttribute("user", user);

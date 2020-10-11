@@ -178,11 +178,10 @@
 									<select id="category" class="form-control" name="category"
 										size="1">
 										<!-- <option >Please select a category</option> -->
-										<option value="Electronic products">Electronic
-											products</option>
-										<option value="Clothes">Clothes</option>
-										<option value="Sports equipment">Sports equipment</option>
-										<option value="Books">Books</option>
+										<option value="Fashion">Fashion</option>
+										<option value="Electronics">Electronics</option>
+										<option value="SportingGoods">Sporting goods</option>
+										<option value="HomeGarden">Home & Garden</option>
 									</select>
 								</div>
 							</div>
@@ -238,7 +237,7 @@
 							<div class="form-group">
 								<button type="submit" id="asubmit"
 									class="btn btn-primary col-sm-offset-4"
-									data-loading-text="正在提交">
+									data-loading-text="Submitting">
 									<i class="icon-ok"></i> Submit
 								</button>
 							</div>
