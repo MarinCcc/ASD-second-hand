@@ -15,8 +15,6 @@
 <script type="text/javascript"
 	src="/js/bootstrap-3.3.2-dist/js/bootstrap.js"></script>
 <script type="text/javascript" src="/js/jquery.bootstrap.min.js"></script>
-<script type="text/javascript"
-	src="/js/plugins/uploadify/jquery.uploadify.min.js"></script>
 <script type="text/javascript" src="/js/plugins/jquery.form.js"></script>
 <script type="text/javascript" src="/js/plugins/jquery.form.js"></script>
 <script type="text/javascript"
@@ -24,8 +22,7 @@
 
 <script type="text/javascript">
 		$(function() {
-			
-			$('#pagination').twbsPagination({
+			$('#pagination').twbsPagination(
 				totalPages : ${pageResult.totalPage},
 				startPage : ${pageResult.currentPage},
 				visiblePages : 5,
@@ -49,23 +46,24 @@
 				form.find("[name=state]").val($(this).val());
 				$("#myModal").modal("hide");
 				form.ajaxSubmit(function(data){
-						$.messager.confirm("Prompt","Audit Successful!",function(){
-							$("#remark").val("");
+					if(data.success){
+						$.messager.confirm("提示","Audit Successful!",function(){
 							window.location.reload();
 						});
+					}else{
+						$.messager.alert("提示",data.msg);
+					}
 				});
 				return false;
 			});
 			
 			$(".auditClass").click(function(){
 				var json=$(this).data("json");
-				$("#oid").val(json.oid);
 				$("#applierEmail").html(json.applierEmail);
 				$("#title").html(json.title);
 				$("#price").html(json.price);
 				$("#description").html(json.description);
-				var bargainStatus = json.bargainStatus.toString();
-				$("#bargainStatus").html(bargainStatus);
+				$("#bargainStatus").html(json.bargainStatus);
 				$("#category").html(json.category);
 				$("#picture1").attr("src",json.picture1);
 				$("#picture2").attr("src",json.picture2);
@@ -122,10 +120,13 @@
 				</select>
 
 			</div>
-
 			<div class="form-group">
-				<input type="text" class="form-control"
-					placeholder="Enter to search">
+				<label>Apply Time</label> <input class="form-control" type="text"
+					name="beginDate" id="beginDate" value="${qo.beginDate}" />to <input
+					class="form-control" type="text" name="endDate" id="endDate"
+					value="${qo.endDate}" />
+			</div>
+			<div class="form-group">
 				<button id="query" class="btn btn-success">
 					<i class="icon-search"></i> Search
 				</button>
@@ -169,11 +170,10 @@
 					</c:forEach>
 				</tbody>
 			</table>
-			<div style="text-align: center;">
-				<ul id="pagination" class="pagination"></ul>
-			</div>
 		</div>
-	</div>
+		<div style="text-align: center;">
+			<ul id="pagination" class="pagination"></ul>
+		</div>
 	</div>
 
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
@@ -181,12 +181,12 @@
 			<div class="modal-content">
 				<div class="modal-body">
 					<form class="form-horizontal" id="editform" method="post"
-						action="/ProductServlet?method=auditSaleApplication">
+						action="/">
 						<fieldset>
 							<div id="legend" class="">
-								Audit Sale Application
+								<legend>Audit Sale Application</legend>
 							</div>
-							<input type="hidden" name="oid" id="oid" value="" /> 
+							<!-- <input type="hidden" name="id" id="id" value="" /> -->
 							<input type="hidden" name="state" id="state" value="" />
 							<div class="row">
 								<label class="col-sm-2 control-label" for="name">Applicant
@@ -239,7 +239,7 @@
 								<label class="col-sm-2 control-label" for="name">Audit
 									remark</label>
 								<div class="col-sm-6">
-									<textarea  id="remark" name="remark" rows="4" cols="60"></textarea>
+									<textarea name="remark" rows="4" cols="60"></textarea>
 								</div>
 							</div>
 						</fieldset>
@@ -252,7 +252,6 @@
 				</div>
 			</div>
 		</div>
-	</div>
 	</div>
 </body>
 <%@ include file="WEB-INF/jsp/common/footer.jsp"%>

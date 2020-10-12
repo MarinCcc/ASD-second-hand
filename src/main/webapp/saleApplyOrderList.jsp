@@ -226,11 +226,10 @@ x
 										<select id="category" class="form-control" name="category"
 											size="1">
 											<!-- <option >Please select a category</option> -->
-											<option value="Electronic products">Electronic
-												products</option>
-											<option value="Clothes">Clothes</option>
-											<option value="Sports equipment">Sports equipment</option>
-											<option value="Books">Books</option>
+											<option value="Fashion">Fashion</option>
+											<option value="Electronics">Electronics</option>
+											<option value="SportingGoods">SportingGoods</option>
+											<option value="HomeGarden">Home & Garden</option>
 										</select>
 									</div>
 								</div>

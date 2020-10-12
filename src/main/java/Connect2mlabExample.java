@@ -1,13 +1,13 @@
 
 import org.bson.Document;
 import org.bson.conversions.Bson;
-import org.bson.types.ObjectId;
 
+import com.mongodb.BasicDBObject;
+import com.mongodb.DBObject;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
-import com.mongodb.client.model.Filters;
 
 import cn.second_hand.user.utils.MongoDBUtils;
 
@@ -24,12 +24,14 @@ public class Connect2mlabExample {
 //			String formatDate = format.format(date);
 //			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 //	        Date startTime =  format.parse("2022-06-17 15:37:08");
-			Bson filter = Filters.and(Filters.eq("auditState", 0),Filters.eq("isHide", false));
-			FindIterable<Document> findIterable =collection.find(filter);
+//			Bson filter = Filters.and(Filters.eq("category", "Home & Garden"));
+			DBObject sort = new BasicDBObject();
+			sort.put("price", -1);
+			FindIterable<Document> findIterable =collection.find().sort((Bson) sort);
 			MongoCursor<Document> cursor = findIterable.iterator();
 			while(cursor.hasNext()) {
 				Document document = cursor.next();
-				System.out.println(document.getObjectId("_id"));
+				System.out.println(document.get("price"));
 			}
 			cursor.close();
 //			Bson filter = Filters.eq("_id",new ObjectId("5f6402db6cee034ecf0abf88"));

@@ -26,8 +26,8 @@
 		<ul class="in">
 			<li name="accountFlow_list"><a href="/OrderServlet?method=getOrderList&typeId=2">My Order</a></li>
 			<li name="recharge"><a href="/">Pending order</a></li>
-			<li name="auditSaleApplyPage"><a href="/ProductServlet?method=saleApplyingListPage">Applying order</a></li>
-			<li name="saleApply"><a href="/saleApplication.jsp">Sale Apply</a></li>
+			<li name="saleApplyingListPage"><a href="/ProductServlet?method=saleApplyingListPage">Applying order</a></li>
+			<li name="saleApplication"><a href="/saleApplication.jsp">Sale Apply</a></li>
 		</ul>
 	</li>
 </ul>

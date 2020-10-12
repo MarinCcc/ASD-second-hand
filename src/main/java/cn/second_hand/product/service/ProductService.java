@@ -17,44 +17,133 @@ public class ProductService {
 		productDao.saveSaleApp(product);
 	}
 
-	public PageResult query(AuditQueryObject auditQueryObject) {
-		int count = productDao.queryForCount(auditQueryObject);
+	public PageResult queryForAllSaleApplication(AuditQueryObject auditQueryObject) {
+		int count = productDao.queryForAllSaleApplicationCount(auditQueryObject);
 		if (count > 0) {
-			List<Product> list = productDao.query(auditQueryObject);
+			List<Product> list = productDao.queryForAllSaleApplication(auditQueryObject);
 			return new PageResult(list, count, auditQueryObject.getCurrentPage(), auditQueryObject.getPageSize());
 		} else {
 			return PageResult.empty(auditQueryObject.getPageSize());
 		}
 	}
 
-	public PageResult query(AuditQueryObject auditQueryObject, Integer state) {
-		int count = productDao.queryForCount(auditQueryObject, state);
+	public PageResult queryForSaleApplicationWithState(AuditQueryObject auditQueryObject, Integer state) {
+		int count = productDao.queryForSaleApplicationCountWithState(auditQueryObject, state);
 		if (count > 0) {
-			List<Product> list = productDao.query(auditQueryObject, state);
+			List<Product> list = productDao.queryForSaleApplicationWithState(auditQueryObject, state);
 			return new PageResult(list, count, auditQueryObject.getCurrentPage(), auditQueryObject.getPageSize());
 		} else {
 			return PageResult.empty(auditQueryObject.getPageSize());
 		}
 	}
 
-	public PageResult queryApplyingList(AuditQueryObject auditQueryObject,String currentUserEmail) {
-		int count = productDao.queryApplyingListForCount(auditQueryObject,currentUserEmail);
+	public PageResult queryCurrentUserApplyingList(AuditQueryObject auditQueryObject, String currentUserEmail) {
+		int count = productDao.queryCurrentUserApplyingListForCount(auditQueryObject, currentUserEmail);
 		if (count > 0) {
-			List<Product> list = productDao.queryApplyingList(auditQueryObject,currentUserEmail);
+			List<Product> list = productDao.queryCurrentUserApplyingList(auditQueryObject, currentUserEmail);
 			return new PageResult(list, count, auditQueryObject.getCurrentPage(), auditQueryObject.getPageSize());
 		} else {
 			return PageResult.empty(auditQueryObject.getPageSize());
 		}
 	}
 
-	public void editSaleApplyingListPage(Product product) {
-		productDao.editSaleApplyingListPage(product);
-		
+	public void editCurrentUserSaleApplyingListPage(Product product) {
+		productDao.editCurrentUserSaleApplyingListPage(product);
+
 	}
 
-	public void hideSaleApplication(ObjectId id) {
-		productDao.hideSaleApplication(id);
-		
+	public void hideCurrentUserSaleApplication(ObjectId id) {
+		productDao.hideCurrentUserSaleApplication(id);
+
+	}
+
+	public PageResult queryAllProductList(AuditQueryObject auditQueryObject) {
+		int count = productDao.queryAllProductListForCount(auditQueryObject);
+		if (count > 0) {
+			List<Product> list = productDao.queryAllProductList(auditQueryObject);
+			return new PageResult(list, count, auditQueryObject.getCurrentPage(), auditQueryObject.getPageSize());
+		} else {
+			return PageResult.empty(auditQueryObject.getPageSize());
+		}
+	}
+
+	public PageResult queryForProductListWithKeyword(AuditQueryObject auditQueryObject, String keyword) {
+		int count = productDao.queryForProductListCountWithKeyword(auditQueryObject, keyword);
+		if (count > 0) {
+			List<Product> list = productDao.queryForProductListWithKeyword(auditQueryObject, keyword);
+			return new PageResult(list, count, auditQueryObject.getCurrentPage(), auditQueryObject.getPageSize());
+		} else {
+			return PageResult.empty(auditQueryObject.getPageSize());
+		}
+	}
+
+	public PageResult queryForProductListWithCategory(AuditQueryObject auditQueryObject, String category) {
+		int count = productDao.queryForProductListCountWithCategory(auditQueryObject, category);
+		if (count > 0) {
+			List<Product> list = productDao.queryForProductListWithCategory(auditQueryObject, category);
+			return new PageResult(list, count, auditQueryObject.getCurrentPage(), auditQueryObject.getPageSize());
+		} else {
+			return PageResult.empty(auditQueryObject.getPageSize());
+		}
+	}
+
+	public PageResult queryForProductListWithKeywordCategory(AuditQueryObject auditQueryObject, String keyword,
+			String category) {
+		int count = productDao.queryForProductListCountWithKeywordCategory(auditQueryObject, keyword, category);
+		if (count > 0) {
+			List<Product> list = productDao.queryForProductListWithKeywordCategory(auditQueryObject, keyword, category);
+			return new PageResult(list, count, auditQueryObject.getCurrentPage(), auditQueryObject.getPageSize());
+		} else {
+			return PageResult.empty(auditQueryObject.getPageSize());
+		}
+	}
+
+	public PageResult queryForProductListWithSortBy(AuditQueryObject auditQueryObject, int sortBy) {
+		int count = productDao.queryAllProductListForCount(auditQueryObject);
+		if (count > 0) {
+			List<Product> list = productDao.queryForProductListWithSortBy(auditQueryObject, sortBy);
+			return new PageResult(list, count, auditQueryObject.getCurrentPage(), auditQueryObject.getPageSize());
+		} else {
+			return PageResult.empty(auditQueryObject.getPageSize());
+		}
+	}
+
+	public PageResult queryForProductListWithKeywordSortBy(AuditQueryObject auditQueryObject, String keyword,
+			int sortBy) {
+		int count = productDao.queryForProductListCountWithKeyword(auditQueryObject, keyword);
+		if (count > 0) {
+			List<Product> list = productDao.queryForProductListWithKeywordsortBy(auditQueryObject, keyword, sortBy);
+			return new PageResult(list, count, auditQueryObject.getCurrentPage(), auditQueryObject.getPageSize());
+		} else {
+			return PageResult.empty(auditQueryObject.getPageSize());
+		}
+	}
+
+	public PageResult queryForProductListWithCategorySortBy(AuditQueryObject auditQueryObject, String category,
+			int sortBy) {
+		int count = productDao.queryForProductListCountWithCategory(auditQueryObject, category);
+		if (count > 0) {
+			List<Product> list = productDao.queryForProductListWithCategorysortBy(auditQueryObject, category, sortBy);
+			return new PageResult(list, count, auditQueryObject.getCurrentPage(), auditQueryObject.getPageSize());
+		} else {
+			return PageResult.empty(auditQueryObject.getPageSize());
+		}
+	}
+
+	public PageResult queryForProductListWithKeywordCategorySortBy(AuditQueryObject auditQueryObject, String keyword,
+			String category, int sortBy) {
+		int count = productDao.queryForProductListCountWithKeywordCategory(auditQueryObject, keyword, category);
+		if (count > 0) {
+			List<Product> list = productDao.queryForProductListWithKeywordCategorySortBy(auditQueryObject, keyword,
+					category, sortBy);
+			return new PageResult(list, count, auditQueryObject.getCurrentPage(), auditQueryObject.getPageSize());
+		} else {
+			return PageResult.empty(auditQueryObject.getPageSize());
+		}
+	}
+
+	public void auditSaleApplication(Product product) {
+		productDao.auditSaleApplication(product);
 	}
 
 }
