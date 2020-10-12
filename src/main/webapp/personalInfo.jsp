@@ -41,10 +41,7 @@
 					
 					
 				
-						
-						
-<form class="form-horizontal" id="realAuthForm" method="post" action="/ProductServlet?method=saleApplication" novalidate="novalidate">
-	 <fieldset>		
+ <fieldset>		
 	 
 	 <div >				
 	<h1>This is your information</h1>					
@@ -57,10 +54,9 @@
        
         
       
-       
 </fieldset>
 
-</form>
+
 	
 	</div>
 	</div>
