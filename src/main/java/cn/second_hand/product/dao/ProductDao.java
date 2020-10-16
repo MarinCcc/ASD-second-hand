@@ -398,8 +398,73 @@ public class ProductDao {
 	public void auditSaleApplication(Product product) {
 		ObjectId oid = product.getOid();
 		Bson filter = Filters.eq("_id", oid);
-		productCollection.updateOne(filter, new Document("$set", 
-				new Document("auditState", product.getAuditState())
-				.append("remark", product.getRemark())));
+		productCollection.updateOne(filter, new Document("$set",
+				new Document("auditState", product.getAuditState()).append("remark", product.getRemark())));
+	}
+
+	public int queryCurrentUserSellingListForCount(AuditQueryObject auditQueryObject, String currentUserEmail) {
+		Bson filter = Filters.and(Filters.eq("auditState", 1), Filters.eq("applyEmail", currentUserEmail),
+				Filters.eq("isHide", false));
+		return (int) productCollection.count(filter);
+	}
+
+	public List<Product> queryCurrentUserSellingList(AuditQueryObject auditQueryObject, String currentUserEmail) {
+		Bson filter = Filters.and(Filters.eq("auditState", 1), Filters.eq("isHide", false),
+				Filters.eq("applyEmail", currentUserEmail));
+		FindIterable<Document> findIterable = productCollection.find(filter).limit(auditQueryObject.getPageSize())
+				.skip(auditQueryObject.getStart());
+		List<Product> list = new ArrayList<Product>();
+		for (Document d : findIterable) {
+			Product p = new Product();
+			p.setOid(d.getObjectId("_id"));
+			p.setApplierEmail(d.getString("applyEmail"));
+			p.setApplyStatus(d.getBoolean("applyStatus"));
+			p.setApplyTime(d.getDate("applyTime"));
+			p.setBargainStatus(d.getBoolean("bargainStatus"));
+			p.setCategory(d.getString("category"));
+			p.setDescription(d.getString("description"));
+			p.setPicture1(d.getString("picture1"));
+			p.setPicture2(d.getString("picture2"));
+			p.setPrice(d.getInteger("price"));
+			p.setTitle(d.getString("title"));
+			p.setAuditState(d.getInteger("auditState"));
+			p.setHide(d.getBoolean("isHide"));
+			p.setRemark(d.getString("remark"));
+			list.add(p);
+	}
+		return list;
+	}
+
+	public int queryCurrentUserRefusedListForCount(AuditQueryObject auditQueryObject, String currentUserEmail) {
+		Bson filter = Filters.and(Filters.eq("auditState", 2), Filters.eq("applyEmail", currentUserEmail),
+				Filters.eq("isHide", false));
+		return (int) productCollection.count(filter);
+	}
+
+	public List<Product> queryCurrentUserRefusedList(AuditQueryObject auditQueryObject, String currentUserEmail) {
+		Bson filter = Filters.and(Filters.eq("auditState", 2), Filters.eq("isHide", false),
+				Filters.eq("applyEmail", currentUserEmail));
+		FindIterable<Document> findIterable = productCollection.find(filter).limit(auditQueryObject.getPageSize())
+				.skip(auditQueryObject.getStart());
+		List<Product> list = new ArrayList<Product>();
+		for (Document d : findIterable) {
+			Product p = new Product();
+			p.setOid(d.getObjectId("_id"));
+			p.setApplierEmail(d.getString("applyEmail"));
+			p.setApplyStatus(d.getBoolean("applyStatus"));
+			p.setApplyTime(d.getDate("applyTime"));
+			p.setBargainStatus(d.getBoolean("bargainStatus"));
+			p.setCategory(d.getString("category"));
+			p.setDescription(d.getString("description"));
+			p.setPicture1(d.getString("picture1"));
+			p.setPicture2(d.getString("picture2"));
+			p.setPrice(d.getInteger("price"));
+			p.setTitle(d.getString("title"));
+			p.setAuditState(d.getInteger("auditState"));
+			p.setHide(d.getBoolean("isHide"));
+			p.setRemark(d.getString("remark"));
+			list.add(p);
+	}
+		return list;
 	}
 }
