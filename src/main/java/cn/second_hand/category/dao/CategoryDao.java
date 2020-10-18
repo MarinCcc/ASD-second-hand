@@ -72,15 +72,12 @@ public Category load(ObjectId categoryId) {
 public void edit(Category category) {
 	ObjectId oid = category.getOid();
 	Bson filter = Filters.eq("_id",oid);
-	CategoryCollection.findOneAndUpdate(filter, 
+	CategoryCollection.updateOne(filter, 
 			new Document("$set",
-			new Document("categoriesName", category.getCategoriesName())
-			.append("description", category.getDescription())));
+			      new Document("categoriesName", category.getCategoriesName())
+			               .append("description", category.getDescription())));    
 	
-			
-	
-	
-}
+		}
 
     
     

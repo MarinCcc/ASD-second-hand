@@ -55,15 +55,15 @@
     <p style="font-weight: 900; color: red">${msg }</p>
     <form action="<c:url value='/CategoryServlet'/>" method="post">
    <input type="hidden" name="method" value="edit"/>
-   <input type="hidden" name="id" value="${category.oid}"/> 
+  <%--  <input type="hidden" name="oid" value="${category.oid}"/>  --%>
     <br/>
     	<div><label for="categoriesName">
     	 
     	CategoryName：</label></div>
-    	<input type="text" value="${category.categoriesName}"/>
+    	<input type="text" name="categoriesName" value="${category.categoriesName}"/>
     	<br/>
     	<div><label for="description">Description:</label></div>
-    	<textarea cols="40" rows="10" >${category.description}</textarea>
+    	<textarea cols="40" rows="10" name="description">${category.description}</textarea>
     	  <!-- <input type="text" style="width:300px; height:100px; line-height:100px; maxlength:30;" name="description"/> -->
     		<!-- id="value" -->
     	   <br/>
