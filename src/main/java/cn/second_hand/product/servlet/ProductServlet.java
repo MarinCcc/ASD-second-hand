@@ -105,7 +105,7 @@ public class ProductServlet extends BaseServlet {
 		} else {
 			auditQueryObject.setCurrentPage(Integer.valueOf(request.getParameter("currentPage")));
 		}
-		PageResult pageResult = productService.queryCurrentUserApplyingList(auditQueryObject, currentUserEmail);
+		PageResult pageResult = productService.queryCurrentUserSellingList(auditQueryObject, currentUserEmail);
 		request.setAttribute("pageResult", pageResult);
 		return "f:/sellingProductList.jsp";
 
@@ -123,7 +123,7 @@ public class ProductServlet extends BaseServlet {
 		} else {
 			auditQueryObject.setCurrentPage(Integer.valueOf(request.getParameter("currentPage")));
 		}
-		PageResult pageResult = productService.queryCurrentUserApplyingList(auditQueryObject, currentUserEmail);
+		PageResult pageResult = productService.queryCurrentUserRefusedList(auditQueryObject, currentUserEmail);
 		request.setAttribute("pageResult", pageResult);
 		return "f:/refusedProductList.jsp";
 
