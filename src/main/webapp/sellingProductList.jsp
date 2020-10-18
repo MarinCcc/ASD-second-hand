@@ -18,13 +18,49 @@
 <script type="text/javascript"
 	src="/js/plugins/uploadify/jquery.uploadify.min.js"></script>
 <script type="text/javascript" src="/js/plugins/jquery.form.js"></script>
-<script type="text/javascript" src="/js/plugins/jquery.form.js"></script>
 <script type="text/javascript"
 	src="/js/plugins/jquery.twbsPagination.min.js"></script>
+x
+
+<style type="text/css">
+.picture {
+	width: 160px;
+	height: 150px;
+	float: left;
+	margin-right: 10px;
+	border: 1px solid #e3e3e3;
+	text-align: center;
+	padding: 5px;
+}
+
+.uploadImg {
+	width: 100px;
+	height: 100px;
+	margin-top: 5px;
+}
+
+.swfupload {
+	left: 0px;
+	cursor: pointer;
+}
+
+.uploadify {
+	height: 20px;
+	font-size: 13px;
+	line-height: 20px;
+	text-align: center;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	cursor: pointer;
+	background-color: #337ab7;
+	border-color: #2e6da4;
+	color: #fff;
+}
+</style>
 
 <script type="text/javascript">
 		$(function() {
-			
 			$('#pagination').twbsPagination({
 				totalPages : ${pageResult.totalPage},
 				startPage : ${pageResult.currentPage},
@@ -38,26 +74,8 @@
 					$("#searchForm").submit();
 				}
 			});
-			
-			$("#query").click(function(){
-				$("#currentPage").val(1);
-				$("#searchForm").submit();
-			})
-			
-			$(".btn_audit").click(function(){
-				var form=$("#editform");
-				form.find("[name=state]").val($(this).val());
-				$("#myModal").modal("hide");
-				form.ajaxSubmit(function(data){
-						$.messager.confirm("Prompt","Audit Successful!",function(){
-							$("#remark").val("");
-							window.location.reload();
-						});
-				});
-				return false;
-			});
-			
-			$(".auditClass").click(function(){
+		
+			$(".reviewClass").click(function(){
 				var json=$(this).data("json");
 				$("#oid").val(json.oid);
 				$("#applierEmail").html(json.applierEmail);
@@ -69,108 +87,73 @@
 				$("#category").html(json.category);
 				$("#picture1").attr("src",json.picture1);
 				$("#picture2").attr("src",json.picture2);
-				
+				$("#remark").html(json.remark);
 				$("#myModal").modal("show");
 			});
-	/* 	}); */
+			});
+			
+		
+
 	</script>
 
-<%@ include file="WEB-INF/jsp/common/managerTop.jsp"%>
-<%@ include file="WEB-INF/jsp/common/managerHead.jsp"%>
+<%@ include file="WEB-INF/jsp/common/top.jsp"%>
+<%@ include file="WEB-INF/jsp/common/head.jsp"%>
 
 </head>
 <body>
 
-	<div class="col-sm-3">
-		<%@ include file="WEB-INF/jsp/common/managerMenu.jsp"%>
-	</div>
-	<!-- 功能页面 -->
-	<div class="col-sm-9">
-		<div class="page-header">
-			<h3>Sale Application Management</h3>
-		</div>
-		<form id="searchForm" class="form-inline" method="post"
-			action="/ProductServlet?method=auditSaleApplyPage">
-			<input type="hidden" id="currentPage" name="currentPage" value="" />
-			<div class="form-group">
-				<label>Status</label> <select class="form-control" name="state">
-					<c:if test="${state eq null}">
-						<option value="-1">All</option>
-						<option value="0">In the application</option>
-						<option value="1">Approved</option>
-						<option value="2">Refused</option>
-					</c:if>
-					<c:if test="${state eq 0 }">
-						<option value="-1">All</option>
-						<option value="0" selected>In the application</option>
-						<option value="1">Approved</option>
-						<option value="2">Refused</option>
-					</c:if>
-					<c:if test="${state eq 1 }">
-						<option value="-1">All</option>
-						<option value="0">In the application</option>
-						<option value="1" selected>Approved</option>
-						<option value="2">Refused</option>
-					</c:if>
-					<c:if test="${state eq 2 }">
-						<option value="-1">All</option>
-						<option value="0">In the application</option>
-						<option value="1">Approved</option>
-						<option value="2" selected>Refused</option>
-					</c:if>
-
-				</select>
-
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-3">
+				<%@ include file="WEB-INF/jsp/common/leftMenu.jsp"%>
 			</div>
+			<div class="col-sm-9">
+				<div class="page-header">
+					<h3>Applying Order</h3>
+				</div>
+				<form id="searchForm" class="form-inline" method="post"
+					action="/ProductServlet?method=sellingProductListPage">
+					<input type="hidden" id="currentPage" name="currentPage" value="" />
+				</form>
+				<div class="panel panel-default">
 
-			<div class="form-group">
-				<input type="text" class="form-control"
-					placeholder="Enter to search">
-				<button id="query" class="btn btn-success">
-					<i class="icon-search"></i> Search
-				</button>
-			</div>
-		</form>
-		<div class="panel panel-default">
-			<table class="table">
-				<thead>
-					<tr>
-						<th>Applicant Email</th>
-						<th>Title</th>
-						<th>Price</th>
-						<th>Category</th>
-						<th>Apply Date</th>
-						<th>Audit Status</th>
-					</tr>
-				</thead>
+					<c:choose>
+						<c:when test="${not empty pageResult.listData}">
+							<table class="table">
 
-				<tbody>
-					<c:forEach var="info" items="${pageResult.listData }">
-						<tr>
-							<td>${info.applierEmail}</td>
-							<td>${info.title}</td>
-							<td>${info.price}</td>
-							<td>${info.category}</td>
-							<td>${info.applyTime}</td>
-							<c:if test="${info.auditState eq 0}">
-								<td>Processing</td>
-							</c:if>
-							<c:if test="${info.auditState eq 1}">
-								<td>Approved</td>
-							</c:if>
-							<c:if test="${info.auditState eq 2}">
-								<td>Refused</td>
-							</c:if>
-							<td><c:if test="${info.auditState ==0}">
-									<a href="javascript:void(-1);" class="auditClass"
-										data-json='${info.jsonString}'>Audit</a>
-								</c:if></td>
-						</tr>
-					</c:forEach>
-				</tbody>
-			</table>
-			<div style="text-align: center;">
-				<ul id="pagination" class="pagination"></ul>
+								<thead>
+									<tr>
+										<th>Title</th>
+										<th>Price</th>
+										<th>Category</th>
+										<th>Apply Date</th>
+									</tr>
+								</thead>
+
+								<tbody>
+									<c:forEach var="info" items="${pageResult.listData}">
+										<tr>
+											<td>${info.title}</td>
+											<td>${info.price}</td>
+											<td>${info.category}</td>
+											<td>${info.applyTime}</td>
+											<td><a href="javascript:void(-1);" class="reviewClass"
+												data-json='${info.jsonString}'>Review</a></td>
+											<td><a
+												href="ProductServlet?method=withdrawSaleProduct&oid=${info.oid}">Delete</a></td>
+										</tr>
+									</c:forEach>
+								</tbody>
+							</table>
+							<div style="text-align: center;">
+								<ul id="pagination" class="pagination"></ul>
+							</div>
+						</c:when>
+						<c:otherwise>
+							<h1>You have nothing on sale at present</h1>
+						</c:otherwise>
+					</c:choose>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -179,14 +162,8 @@
 		<div class="modal-dialog modal-lg" role="document">
 			<div class="modal-content">
 				<div class="modal-body">
-					<form class="form-horizontal" id="editform" method="post"
-						action="/ProductServlet?method=auditSaleApplication">
 						<fieldset>
-							<div id="legend" class="">
-								Audit Sale Application
-							</div>
-							<input type="hidden" name="oid" id="oid" value="" /> 
-							<input type="hidden" name="state" id="state" value="" />
+							<div id="legend" class="">Product Detail</div>
 							<div class="row">
 								<label class="col-sm-2 control-label" for="name">Applicant
 									Email</label>
@@ -238,16 +215,13 @@
 								<label class="col-sm-2 control-label" for="name">Audit
 									remark</label>
 								<div class="col-sm-6">
-									<textarea  id="remark" name="remark" rows="4" cols="60"></textarea>
+									<label class="form-control" id="remark"></label>
 								</div>
 							</div>
 						</fieldset>
-					</form>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-success btn_audit" value="1">Approve</button>
-					<button type="button" class="btn btn-warning btn_audit" value="2">Refuse</button>
 				</div>
 			</div>
 		</div>

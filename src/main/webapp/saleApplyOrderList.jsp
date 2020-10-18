@@ -116,7 +116,7 @@ x
 				}
 			});
 			
-			$(".auditClass").click(function(){
+			$(".modifyClass").click(function(){
 				var json=$(this).data("json");
 				$("#oid").val(json.oid);
 				$("#title").val(json.title);
@@ -182,7 +182,7 @@ x
 											<td>${info.price}</td>
 											<td>${info.category}</td>
 											<td>${info.applyTime}</td>
-											<td><a href="javascript:void(-1);" class="auditClass"
+											<td><a href="javascript:void(-1);" class="modifyClass"
 												data-json='${info.jsonString}'>Modify</a></td>
 											<td><a
 												href="ProductServlet?method=withdrawSaleApply&oid=${info.oid}">Delete</a></td>

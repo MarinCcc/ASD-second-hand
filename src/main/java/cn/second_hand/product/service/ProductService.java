@@ -146,4 +146,24 @@ public class ProductService {
 		productDao.auditSaleApplication(product);
 	}
 
+	public PageResult queryCurrentUserSellingList(AuditQueryObject auditQueryObject, String currentUserEmail) {
+		int count = productDao.queryCurrentUserSellingListForCount(auditQueryObject, currentUserEmail);
+		if (count > 0) {
+			List<Product> list = productDao.queryCurrentUserSellingList(auditQueryObject, currentUserEmail);
+			return new PageResult(list, count, auditQueryObject.getCurrentPage(), auditQueryObject.getPageSize());
+		} else {
+			return PageResult.empty(auditQueryObject.getPageSize());
+		}
+	}
+
+	public PageResult queryCurrentUserRefusedList(AuditQueryObject auditQueryObject, String currentUserEmail) {
+		int count = productDao.queryCurrentUserRefusedListForCount(auditQueryObject, currentUserEmail);
+		if (count > 0) {
+			List<Product> list = productDao.queryCurrentUserRefusedList(auditQueryObject, currentUserEmail);
+			return new PageResult(list, count, auditQueryObject.getCurrentPage(), auditQueryObject.getPageSize());
+		} else {
+			return PageResult.empty(auditQueryObject.getPageSize());
+		}
+	}
+
 }

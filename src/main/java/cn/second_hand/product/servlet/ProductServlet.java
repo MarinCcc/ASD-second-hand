@@ -19,7 +19,7 @@ import cn.second_hand.user.servlet.BaseServlet;
 public class ProductServlet extends BaseServlet {
 
 	private ProductService productService = new ProductService();
-	
+
 	public String auditSaleApplication(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		Product product = new Product();
@@ -93,6 +93,42 @@ public class ProductServlet extends BaseServlet {
 
 	}
 
+	public String sellingProductListPage(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		AuditQueryObject auditQueryObject = new AuditQueryObject();
+		auditQueryObject.setPageSize(2);
+		User user = (User) request.getSession().getAttribute("session_user");
+		String currentUserEmail = user.getEmail();
+		int currentPage = 1;
+		if (request.getParameter("currentPage") == null || request.getParameter("currentPage").equals("")) {
+			auditQueryObject.setCurrentPage(currentPage);
+		} else {
+			auditQueryObject.setCurrentPage(Integer.valueOf(request.getParameter("currentPage")));
+		}
+		PageResult pageResult = productService.queryCurrentUserSellingList(auditQueryObject, currentUserEmail);
+		request.setAttribute("pageResult", pageResult);
+		return "f:/sellingProductList.jsp";
+
+	}
+
+	public String refusedSaleApplyingListPage(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		AuditQueryObject auditQueryObject = new AuditQueryObject();
+		auditQueryObject.setPageSize(2);
+		User user = (User) request.getSession().getAttribute("session_user");
+		String currentUserEmail = user.getEmail();
+		int currentPage = 1;
+		if (request.getParameter("currentPage") == null || request.getParameter("currentPage").equals("")) {
+			auditQueryObject.setCurrentPage(currentPage);
+		} else {
+			auditQueryObject.setCurrentPage(Integer.valueOf(request.getParameter("currentPage")));
+		}
+		PageResult pageResult = productService.queryCurrentUserRefusedList(auditQueryObject, currentUserEmail);
+		request.setAttribute("pageResult", pageResult);
+		return "f:/refusedProductList.jsp";
+
+	}
+
 	public String editSaleApplyingListPage(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		Product product = new Product();
@@ -113,6 +149,13 @@ public class ProductServlet extends BaseServlet {
 		ObjectId id = new ObjectId(request.getParameter("oid"));
 		productService.hideCurrentUserSaleApplication(id);
 		return "ProductServlet?method=saleApplyingListPage";
+	}
+
+	public String withdrawSaleProduct(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		ObjectId id = new ObjectId(request.getParameter("oid"));
+		productService.hideCurrentUserSaleApplication(id);
+		return "ProductServlet?method=sellingProductListPage";
 	}
 
 	public String allProductListPage(HttpServletRequest request, HttpServletResponse response)
