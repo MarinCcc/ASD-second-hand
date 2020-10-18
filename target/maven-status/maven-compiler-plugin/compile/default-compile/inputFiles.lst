@@ -4,6 +4,7 @@
 /Users/mark/eclipse-workspace/ASD-second-hand/src/main/java/cn/second_hand/product/domain/Product.java
 /Users/mark/eclipse-workspace/ASD-second-hand/src/main/java/cn/second_hand/manager/domain/Manager.java
 /Users/mark/eclipse-workspace/ASD-second-hand/src/main/java/cn/second_hand/product/domain/Order.java
+/Users/mark/eclipse-workspace/ASD-second-hand/src/main/java/cn/second_hand/category/service/CategoryService.java
 /Users/mark/eclipse-workspace/ASD-second-hand/src/main/java/cn/second_hand/user/utils/MailUtils.java
 /Users/mark/eclipse-workspace/ASD-second-hand/src/main/java/cn/second_hand/product/servlet/SaleOrderServlet.java
 /Users/mark/eclipse-workspace/ASD-second-hand/src/main/java/cn/second_hand/cart/service/CartService.java
@@ -12,8 +13,11 @@
 /Users/mark/eclipse-workspace/ASD-second-hand/src/main/java/cn/second_hand/product/service/ProductService.java
 /Users/mark/eclipse-workspace/ASD-second-hand/src/main/java/cn/second_hand/cart/dao/CartDao.java
 /Users/mark/eclipse-workspace/ASD-second-hand/src/main/java/cn/second_hand/cart/servlet/CartServlet.java
+/Users/mark/eclipse-workspace/ASD-second-hand/src/main/java/cn/second_hand/category/utils/CommonUtils.java
+/Users/mark/eclipse-workspace/ASD-second-hand/src/main/java/cn/second_hand/category/servlet/CategoryServlet.java
 /Users/mark/eclipse-workspace/ASD-second-hand/src/main/java/cn/second_hand/user/servlet/UserServlet.java
 /Users/mark/eclipse-workspace/ASD-second-hand/src/main/java/cn/second_hand/user/utils/DateUtil.java
+/Users/mark/eclipse-workspace/ASD-second-hand/src/main/java/cn/second_hand/category/domain/CategoryException.java
 /Users/mark/eclipse-workspace/ASD-second-hand/src/main/java/cn/second_hand/manager/service/ManagerService.java
 /Users/mark/eclipse-workspace/ASD-second-hand/src/main/java/cn/second_hand/user/servlet/BaseServlet.java
 /Users/mark/eclipse-workspace/ASD-second-hand/src/main/java/cn/second_hand/user/dao/UserDao.java
@@ -22,6 +26,7 @@
 /Users/mark/eclipse-workspace/ASD-second-hand/src/main/java/cn/second_hand/user/domain/UserException.java
 /Users/mark/eclipse-workspace/ASD-second-hand/src/main/java/cn/second_hand/manager/domain/ManagerException.java
 /Users/mark/eclipse-workspace/ASD-second-hand/src/main/java/cn/second_hand/user/utils/MongoDBUtils.java
+/Users/mark/eclipse-workspace/ASD-second-hand/src/main/java/cn/second_hand/category/domain/Category.java
 /Users/mark/eclipse-workspace/ASD-second-hand/src/main/java/cn/second_hand/product/servlet/ProductServlet.java
 /Users/mark/eclipse-workspace/ASD-second-hand/src/main/java/cn/second_hand/manager/dao/ManagerDao.java
 /Users/mark/eclipse-workspace/ASD-second-hand/src/main/java/cn/second_hand/product/service/OrderService.java
@@ -33,5 +38,6 @@
 /Users/mark/eclipse-workspace/ASD-second-hand/src/main/java/cn/second_hand/cart/utils/DateUtils.java
 /Users/mark/eclipse-workspace/ASD-second-hand/src/main/java/cn/second_hand/cart/domain/Cart.java
 /Users/mark/eclipse-workspace/ASD-second-hand/src/main/java/cn/second_hand/user/utils/Mail.java
+/Users/mark/eclipse-workspace/ASD-second-hand/src/main/java/cn/second_hand/category/dao/CategoryDao.java
 /Users/mark/eclipse-workspace/ASD-second-hand/src/main/java/cn/second_hand/product/servlet/ItemDescription.java
 /Users/mark/eclipse-workspace/ASD-second-hand/src/main/java/cn/second_hand/query/PageResult.java
