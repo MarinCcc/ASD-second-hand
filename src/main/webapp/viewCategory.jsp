@@ -24,10 +24,7 @@
 
 <script type="text/javascript">
 
-$("#deleteCategory").ajaxForm(
-		function() {
-			$.messager.confirm("you sure you want to delete this category?"
-					});
+ 
 	</script>
 
 <%@ include file="WEB-INF/jsp/common/managerTop.jsp"%>

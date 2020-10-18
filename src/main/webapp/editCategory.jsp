@@ -22,8 +22,24 @@
 <script type="text/javascript"
 	src="/js/plugins/jquery.twbsPagination.min.js"></script>
 
-<script>
-        document.getElementById("value").value="${category.description}"
+<script type="text/javascript">
+       /*  document.getElementById("value").value="${category.description}" */
+       $(function() {
+    	   $("#editForm").ajaxForm(
+   				function() {
+   					$.messager.confirm("Comfirmation",
+   							"you sure you want to edit this category",
+   							function() {
+   								window.location.reload();
+   								document.getElementById("editForm")
+   								.reset();
+   								
+   							});
+   				});
+   	}); 
+    	   
+       
+       
 	</script>
 	
 	<style>
@@ -51,9 +67,9 @@
 		</div>
 	<!-- <div class="panel panel-default"> -->
 			
-			
+		<!-- id = "editForm"	 -->
     <p style="font-weight: 900; color: red">${msg }</p>
-    <form action="<c:url value='/CategoryServlet'/>" method="post">
+    <form id="editForm" action="<c:url value='/CategoryServlet'/>" method="post">
    <input type="hidden" name="method" value="edit"/>
   <input type="hidden" name="oid" value="${category.oid}"/>  
     <br/>
@@ -71,6 +87,7 @@
     	<div class= "#box_relative">
     	<input type="submit" value="edit" style="width:50px; height:30px;"/>
     	<input type="reset" value="reset"style="width:50px; height:30px;"/>
+<!--     	onclick="return confirm('You sure want to edit this category?')" -->
     	
           </div>
     

@@ -47,7 +47,7 @@ public class CategoryServlet extends BaseServlet {
 	
 	
 	/*
-	 * 查询所有分类
+	 * Search for all the category
 	 */
 	public String findAll(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
@@ -56,7 +56,7 @@ public class CategoryServlet extends BaseServlet {
 	}
 
 	/*
-	 * 添加分类
+	 * adding category
 	 */
 	public String add(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
