@@ -22,7 +22,7 @@ public class CategoryDao {
 	
     
     /**
-     * 查询所有分类
+     * search category
      * @return
      */
     public List<Category> findAll() {
@@ -40,7 +40,7 @@ public class CategoryDao {
 	}
 
 /**
- * 添加分类
+ * add category
  * @param category
  */
 	public void add(Category category) {

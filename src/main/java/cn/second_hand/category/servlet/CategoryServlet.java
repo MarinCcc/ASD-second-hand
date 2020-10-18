@@ -23,6 +23,7 @@ public class CategoryServlet extends BaseServlet {
 	public String edit(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		Category category = new Category();
+		category.setOid(new ObjectId(request.getParameter("oid")));
 		category.setCategoriesName(request.getParameter("categoriesName"));
 		category.setDescription(request.getParameter("description"));
 		categoryService.edit(category);
@@ -30,7 +31,7 @@ public class CategoryServlet extends BaseServlet {
 	}
 	
 	/**
-	 * 修改之前的加载工作
+	 * edit the content from database
 	 * @param request
 	 * @param response
 	 * @return
