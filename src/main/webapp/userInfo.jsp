@@ -24,16 +24,8 @@
 
 <script type="text/javascript">
 
-	</script>
-	
-	<style>
-#box_relative {
-  position: relative;
-  left: 30px;
  
-}
-	
-	</style>
+	</script>
 
 <%@ include file="WEB-INF/jsp/common/managerTop.jsp"%>
 <%@ include file="WEB-INF/jsp/common/managerHead.jsp"%>
@@ -47,40 +39,42 @@
 	
 	<div class="col-sm-9">
 		<div class="page-header">
-			<h3>Add Categories</h3>
+			<h3>All Users</h3>
 		</div>
-	<!-- <div class="panel panel-default"> -->
-			
-			
-    <p style="font-weight: 900; color: red">${msg }</p>
-    <form action="<c:url value='/CategoryServlet'/>" method="post">
-   
-    <input type="hidden" name="method" value="add"/>
-    <br/>
-    	<div><label for="categoriesName">
-    	 
-    	CategoryName：</label></div>
-    	<input type="text" name="categoriesName"/>
-    	<br/>
-    	<div><label for="description">Description:</label></div>
-    	<textarea name="description" cols="40" rows="10" placeholder="please type your description"></textarea>
-    	 <!--  <input type="text" style="width:300px; height:100px; line-height:100px; maxlength:30;" name="description"/> -->
-    		
-    	   <br/>
-    	   <br/>	
-    	<div class= "#box_relative">
-    	<input onclick="return confirm('You sure want to add this category?')"type="submit" value="add" style="width:50px; height:30px;"/>
-    	<input type="reset" value="reset"style="width:50px; height:30px;"/>
-    	
-          </div>
-    
-	 	</form>
-			
+					
+			<div class="panel panel-default">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Email</th>
+					    <th>password</th>	
+						<th>Active Status</th>
+						
+					</tr>
+				</thead>
+
+				<tbody>
+					  
+						<tr>
+						<c:forEach var="user" items="${userList}">
+							
+							<td>${user.email}</td>
+							<td>${user.password}</td> 
+							<td>${user.activeStatus}</td>
+							
+						<%-- 	${session_user.saleApplyStatus} --%>
+						</tr>
+                    </c:forEach>
+				</tbody>
+			</table>
 			<div style="text-align: center;">
 				<ul id="pagination" class="pagination"></ul>
 			</div>
-			
 		</div>
+	</div>
+	
 
+	
 </body>
 <%@ include file="WEB-INF/jsp/common/footer.jsp"%>
+</html>
