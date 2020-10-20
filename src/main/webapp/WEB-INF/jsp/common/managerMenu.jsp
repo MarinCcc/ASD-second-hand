@@ -26,7 +26,7 @@
 		<ul class="in">
 			<li name="viewCategories"><a href="<c:url value ='/CategoryServlet?method=findAll'/>">view all categories</a></li>
 			<li name="AddCatogory"><a href="/addCategory.jsp">Add category</a></li>
-			<li name="productOfCategory"><a href="/productsByCategories.jsp">view Products by Categories</a></li>
+			<li name="productOfCategory"><a href="/managerProject.jsp">view Products by Categories</a></li>
 			
 		</ul>
 	</li>

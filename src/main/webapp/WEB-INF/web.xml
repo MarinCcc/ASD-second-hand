@@ -65,4 +65,24 @@
     <servlet-name>CategoryServlet</servlet-name>
     <url-pattern>/CategoryServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>managerProductServelt</display-name>
+    <servlet-name>managerProductServelt</servlet-name>
+    <servlet-class>cn.second_hand.product.servlet.managerProductServelt</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>managerProductServelt</servlet-name>
+    <url-pattern>/managerProductServelt</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>managerProductServlet</display-name>
+    <servlet-name>managerProductServlet</servlet-name>
+    <servlet-class>cn.second_hand.product.servlet.managerProductServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>managerProductServlet</servlet-name>
+    <url-pattern>/managerProductServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

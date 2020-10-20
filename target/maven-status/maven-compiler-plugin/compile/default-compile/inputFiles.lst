@@ -27,6 +27,7 @@
 /Users/mark/eclipse-workspace/ASD-second-hand/src/main/java/cn/second_hand/manager/domain/ManagerException.java
 /Users/mark/eclipse-workspace/ASD-second-hand/src/main/java/cn/second_hand/user/utils/MongoDBUtils.java
 /Users/mark/eclipse-workspace/ASD-second-hand/src/main/java/cn/second_hand/category/domain/Category.java
+/Users/mark/eclipse-workspace/ASD-second-hand/src/main/java/cn/second_hand/product/servlet/managerProductServlet.java
 /Users/mark/eclipse-workspace/ASD-second-hand/src/main/java/cn/second_hand/product/servlet/ProductServlet.java
 /Users/mark/eclipse-workspace/ASD-second-hand/src/main/java/cn/second_hand/manager/dao/ManagerDao.java
 /Users/mark/eclipse-workspace/ASD-second-hand/src/main/java/cn/second_hand/product/service/OrderService.java
