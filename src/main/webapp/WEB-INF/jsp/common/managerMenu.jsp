@@ -13,17 +13,20 @@
 	<li class="list-group-item">
 		<a href="#"><span class="text-title">Monitoring</span></a>
 		<ul class="in">
-			<li name="allProducts"><a href="#">view all products</a></li>
+			<li name="allProducts"><a href="/projects.jsp">view all products</a></li>
 			<li name="Transation record"><a href="/">view pending order</a></li>
 			<li name="seller"><a href="/">view all sellers</a></li>
 			<li name="buyer"><a href="/">view all buyers</a></li>
+			<li name="auditSaleApplyPage"><a href="/ProductServlet?method=auditSaleApplyPage">audit Sale Application</a></li>
 			
 		</ul>
 	</li>
 	<li class="list-group-item">
 		<a href="#"><span>Categories</span></a>
 		<ul class="in">
-			<li name="accountFlow_list"><a href="">view all categories</a></li>
+			<li name="viewCategories"><a href="<c:url value ='/CategoryServlet?method=findAll'/>">view all categories</a></li>
+			<li name="AddCatogory"><a href="/addCategory.jsp">Add category</a></li>
+			<li name="productOfCategory"><a href="/managerProject.jsp">view Products by Categories</a></li>
 			
 		</ul>
 	</li>

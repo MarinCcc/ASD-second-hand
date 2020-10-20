@@ -124,6 +124,7 @@ public class Product {
 		json.put("category", category);
 		json.put("picture1", picture1);
 		json.put("picture2", picture2);
+		json.put("remark", remark);
 		return JSONObject.toJSONString(json);
 	}
 	

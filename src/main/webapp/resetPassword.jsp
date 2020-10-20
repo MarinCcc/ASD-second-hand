@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Second-Hand->Login</title>
+<title>Second-Hand</title>
 <link rel="stylesheet" href="/js/bootstrap-3.3.2-dist/css/bootstrap.css" type="text/css" />
 <link rel="stylesheet" href="/css/core.css" type="text/css" />
 
@@ -24,20 +24,20 @@
 </style>
 
 <script type="text/javascript">
-	
+
 </script>
 
 </head>
 <body>
 
-	<!-- <div class="el-header" >
+	<div class="el-header" >
 		<div class="container" style="position: relative;">
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="/index.jsp">HomePage</a></li>
 				<li><a href="/register.jsp">Registration</a></li>
 			</ul>
 		</div>
-	</div> -->
+	</div>
 	
 
 	<div class="navbar navbar-default el-navbar">
@@ -52,33 +52,32 @@
 
 	<div class="container">  
 		<form id="loginForm" class="form-horizontal el-login-form" action="/UserServlet" method="post" >
-		<input type = "hidden" name="method" value="login">
+		<input type = "hidden" name="method" value="resetPassword">
+		<input type = "hidden" name="code" value="${code}">
 		<br>
-			<p class="h2" style="margin: 10px 10px 20px 110px;color:#000;">&emsp;Please login</p> 
+			<p class="h2" style="margin: 10px 10px 20px 40px;color:#000;">&emsp;Reset password</p> 
+			<p class="h4" style="margin: 10px 10px 20px 30px;color:#000;">&emsp;Type new password for your account</p>
+			<br> 
 			<div class="form-group">
-				<label class="control-label col-sm-2">ManagerId</label>
+				<label class="control-label col-sm-2">reset password</label>
 				<div class="col-sm-10">
-					<input type="text" autocomplete="off" name="email" class="form-control" value="${user.email }"/>
+					<input type="password" autocomplete="off" name="password" class="form-control" value=""/>
+					<p style="color: red; font-weight: 900">${msg }</p>	
+					<span style="color: red; font-weight: 900">${errors.password }</span><br/>
 				</div> 
 			</div>
 			<br>
-			<div class="form-group">
-				<label class="control-label col-sm-2">Password</label>
-				<div class="col-sm-10">
-					<input type="password" autocomplete="off" name="password" class="form-control" value="${user.password }" />
-					<p style="color: red; font-weight: 900">${msg }</p>	
-				</div>
-			</div>
 			<br>
 			<div class="form-gorup">
 				<div class="col-sm-offset-3">
-					<button type="submit" class="btn btn-success" style="width: 100px;">
-						　Sign in
+					<button type="submit" class="btn btn-success" style="width: 150px;">
+						　Reset password
 					</button>
-					<!-- &emsp;&emsp;&emsp;&emsp;
-					New customer?<a href="/register.jsp"> Start here.</a> -->
+					&emsp;&emsp;&emsp;&emsp;
+					<a href="/login.jsp"> Return to Sign in.</a>
 				</div>
-				<br><br><br>
+				<br>
+				<br><br>
 			</div>
 		</form>
 	</div>
@@ -89,9 +88,9 @@
 		<div class="context">
 				<div class="left">
 				<p> Online Second-Hand trading market</p>
-				<!-- <p> Develop&emsp;&emsp;&emsp;by：&emsp;ASD Group one</p> -->
+				<p> Develop&emsp;&emsp;&emsp;by：&emsp;ASD Group one</p>
 				<p> Contact Address：&emsp;University of Technology, Sydney</p>
-				<p> ID：&emsp;1234556</p>
+				<p> Contact Number：&emsp;0424666666</p>
 				<p> Email Address &emsp;：&emsp;GroupOne@Student.uts.edu.au</p>
 			</div>
 			<div class="right">

@@ -116,7 +116,7 @@ x
 				}
 			});
 			
-			$(".auditClass").click(function(){
+			$(".modifyClass").click(function(){
 				var json=$(this).data("json");
 				$("#oid").val(json.oid);
 				$("#title").val(json.title);
@@ -182,7 +182,7 @@ x
 											<td>${info.price}</td>
 											<td>${info.category}</td>
 											<td>${info.applyTime}</td>
-											<td><a href="javascript:void(-1);" class="auditClass"
+											<td><a href="javascript:void(-1);" class="modifyClass"
 												data-json='${info.jsonString}'>Modify</a></td>
 											<td><a
 												href="ProductServlet?method=withdrawSaleApply&oid=${info.oid}">Delete</a></td>
@@ -226,11 +226,10 @@ x
 										<select id="category" class="form-control" name="category"
 											size="1">
 											<!-- <option >Please select a category</option> -->
-											<option value="Electronic products">Electronic
-												products</option>
-											<option value="Clothes">Clothes</option>
-											<option value="Sports equipment">Sports equipment</option>
-											<option value="Books">Books</option>
+											<option value="Fashion">Fashion</option>
+											<option value="Electronics">Electronics</option>
+											<option value="SportingGoods">SportingGoods</option>
+											<option value="HomeGarden">Home & Garden</option>
 										</select>
 									</div>
 								</div>

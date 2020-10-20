@@ -25,9 +25,10 @@
 		<a href="#"><span>Sale</span></a>
 		<ul class="in">
 			<li name="accountFlow_list"><a href="/OrderServlet?method=getOrderList&typeId=2">My Order</a></li>
-			<li name="recharge"><a href="/">Pending order</a></li>
-			<li name="auditSaleApplyPage"><a href="/ProductServlet?method=saleApplyingListPage">Applying order</a></li>
-			<li name="saleApply"><a href="/saleApplication.jsp">Sale Apply</a></li>
+			<li name="SellingProductPage"><a href="/ProductServlet?method=sellingProductListPage">Your Products On Sale</a></li>
+			<li name="saleApplyingListPage"><a href="/ProductServlet?method=saleApplyingListPage">Your Products In Application</a></li>
+			<li name="saleApplication"><a href="/saleApplication.jsp">Apply A New Sale Product </a></li>
+			<li name="refusedSaleApplication"><a href="/ProductServlet?method=refusedSaleApplyingListPage">Refused Sale Application</a></li>
 		</ul>
 	</li>
 </ul>
