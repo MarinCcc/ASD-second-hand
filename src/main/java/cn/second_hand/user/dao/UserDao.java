@@ -1,5 +1,8 @@
 package cn.second_hand.user.dao;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.bson.Document;
 import org.bson.conversions.Bson;
 
@@ -9,6 +12,7 @@ import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Filters;
 import com.mongodb.client.result.UpdateResult;
 
+import cn.second_hand.category.domain.Category;
 import cn.second_hand.user.domain.User;
 import cn.second_hand.user.utils.MongoDBUtils;
 
@@ -51,6 +55,21 @@ public class UserDao {
 
 	public void resetPassword(String code, String password) {
 		 collection.updateOne(Filters.eq("passwordResetCode", code), new Document("$set",new Document("password",password).append("passwordResetCode", null)));
+	}
+	
+	public List<User> findAll() {
+		FindIterable<Document> findIterable = collection.find();
+		List<User> list = new ArrayList<User>();
+		for(Document d: findIterable) {
+			User user = new User();
+			user.setOid(d.getObjectId("_id"));
+			user.setEmail(d.getString("email"));
+			user.setActiveStatus(d.getBoolean("activeStatus"));
+			user.setPassword(d.getString("password"));
+			list.add(user);
+			
+		}
+		return list;
 	}
 
 }

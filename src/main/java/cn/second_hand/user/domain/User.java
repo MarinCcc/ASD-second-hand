@@ -1,11 +1,22 @@
 package cn.second_hand.user.domain;
 
+import org.bson.types.ObjectId;
+
 public class User {
 	private String email;
 	private String password;
 	private String verifyCode;
 	private boolean activeStatus;
+	private ObjectId oid;
 	
+	
+	
+	public ObjectId getOid() {
+		return oid;
+	}
+	public void setOid(ObjectId oid) {
+		this.oid = oid;
+	}
 	public boolean isActiveStatus() {
 		return activeStatus;
 	}
@@ -34,8 +45,8 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [email=" + email + ", password=" + password + ", verifyCode=" + verifyCode + ", activeStatus="
-				+ activeStatus + ", saleApplyStatus="  + "]";
+				+ activeStatus + ", oid=" + oid + "]";
 	}
-	
+		
 	
 }

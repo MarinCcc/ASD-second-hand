@@ -279,7 +279,7 @@ h3.break>a {
 <body>
 
 	<div class="container theme-showcase" role="main">
-		<div class="container">
+		<!-- <div class="container">
 			<div class="row clearfix">
 				<div class="col-md-12 column">
 					<nav class="navbar navbar-default" role="navigation">
@@ -298,7 +298,7 @@ h3.break>a {
 					</nav>
 				</div>
 			</div>
-		</div>
+		</div> -->
 
 		<div class="container">
 			<div class="row clearfix">
@@ -344,16 +344,16 @@ h3.break>a {
 									<li><a href="/managerProductServlet?method=allProductListPage"
 										style="color: #555"> All Categories</a></li>
 									<li style="background-color: #B8B8B8;"><a
-										href="/ProductServlet?method=allProductListPage&category=Electronics"
+										href="/managerProductServlet?method=allProductListPage&category=Electronics"
 										style="color: #555"> Electronics</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&category=Fashion"
+										href="/managerProductServlet?method=allProductListPage&category=Fashion"
 										style="color: #555"> Fashion</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&category=SportingGoods"
+										href="/managerProductServlet?method=allProductListPage&category=SportingGoods"
 										style="color: #555"> Sporting goods</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&category=HomeGarden"
+										href="/managerProductServlet?method=allProductListPage&category=HomeGarden"
 										style="color: #555"> Home & Garden</a></li>
 									<br />
 									<br />
@@ -364,26 +364,26 @@ h3.break>a {
 										href="/managerProductServlet?method=allProductListPage&category=Electronics"
 										style="color: #555"> Sort by Release Date</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&sortBy=-1&category=Electronics"
+										href="/managerProductServlet?method=allProductListPage&sortBy=-1&category=Electronics"
 										style="color: #555"> Sort by Higher Price</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&sortBy=1&category=Electronics"
+										href="/managerProductServlet?method=allProductListPage&sortBy=1&category=Electronics"
 										style="color: #555"> Sort by Lower Price</a></li>
 								</c:if>
 								<c:if test="${category eq 'Fashion' && sortBy eq null}">
-									<li><a href="/ProductServlet?method=allProductListPage"
+									<li><a href="/managerProductServlet?method=allProductListPage"
 										style="color: #555"> All Categories</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&category=Electronics"
+										href="/managerProductServlet?method=allProductListPage&category=Electronics"
 										style="color: #555"> Electronics</a></li>
 									<li style="background-color: #B8B8B8;"><a
-										href="/ProductServlet?method=allProductListPage&category=Fashion"
+										href="/managerProductServlet?method=allProductListPage&category=Fashion"
 										style="color: #555"> Fashion</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&category=SportingGoods"
+										href="/managerProductServlet?method=allProductListPage&category=SportingGoods"
 										style="color: #555"> Sporting goods</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&category=HomeGarden"
+										href="/managerProductServlet?method=allProductListPage&category=HomeGarden"
 										style="color: #555"> Home & Garden</a></li>
 									<br />
 									<br />
@@ -391,29 +391,29 @@ h3.break>a {
 									<br />
 									<li>Sort by: <br /></li>
 									<li style="background-color: #B8B8B8;"><a
-										href="/ProductServlet?method=allProductListPage&category=Fashion"
+										href="/managerProductServlet?method=allProductListPage&category=Fashion"
 										style="color: #555"> Sort by Release Date</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&sortBy=-1&category=Fashion"
+										href="/managerProductServlet?method=allProductListPage&sortBy=-1&category=Fashion"
 										style="color: #555"> Sort by Higher Price</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&sortBy=1&category=Fashion"
+										href="/managerProductServlet?method=allProductListPage&sortBy=1&category=Fashion"
 										style="color: #555"> Sort by Lower Price</a></li>
 								</c:if>
 								<c:if test="${category eq 'SportingGoods' && sortBy eq null}">
-									<li><a href="/ProductServlet?method=allProductListPage"
+									<li><a href="/managerProductServlet?method=allProductListPage"
 										style="color: #555"> All Categories</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&category=Electronics"
+										href="/managerProductServlet?method=allProductListPage&category=Electronics"
 										style="color: #555"> Electronics</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&category=Fashion"
+										href="/managerProductServlet?method=allProductListPage&category=Fashion"
 										style="color: #555"> Fashion</a></li>
 									<li style="background-color: #B8B8B8;"><a
-										href="/ProductServlet?method=allProductListPage&category=SportingGoods"
+										href="/managerProductServlet?method=allProductListPage&category=SportingGoods"
 										style="color: #555"> Sporting goods</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&category=HomeGarden"
+										href="/managerProductServlet?method=allProductListPage&category=HomeGarden"
 										style="color: #555"> Home & Garden</a></li>
 									<br />
 									<br />
@@ -421,29 +421,29 @@ h3.break>a {
 									<br />
 									<li>Sort by: <br /></li>
 									<li style="background-color: #B8B8B8;"><a
-										href="/ProductServlet?method=allProductListPage&category=SportingGoods"
+										href="/managerProductServlet?method=allProductListPage&category=SportingGoods"
 										style="color: #555"> Sort by Release Date</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&sortBy=-1&category=SportingGoods"
+										href="/managerProductServlet?method=allProductListPage&sortBy=-1&category=SportingGoods"
 										style="color: #555"> Sort by Higher Price</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&sortBy=1&category=SportingGoods"
+										href="/managerProductServlet?method=allProductListPage&sortBy=1&category=SportingGoods"
 										style="color: #555"> Sort by Lower Price</a></li>
 								</c:if>
 								<c:if test="${category eq 'HomeGarden' && sortBy eq null}">
-									<li><a href="/ProductServlet?method=allProductListPage"
+									<li><a href="/managerProductServlet?method=allProductListPage"
 										style="color: #555"> All Categories</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&category=Electronics"
+										href="/managerProductServlet?method=allProductListPage&category=Electronics"
 										style="color: #555"> Electronics</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&category=Fashion"
+										href="/managerProductServlet?method=allProductListPage&category=Fashion"
 										style="color: #555"> Fashion</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&category=SportingGoods"
+										href="/managerProductServlet?method=allProductListPage&category=SportingGoods"
 										style="color: #555"> Sporting goods</a></li>
 									<li style="background-color: #B8B8B8;"><a
-										href="/ProductServlet?method=allProductListPage&category=HomeGarden"
+										href="/managerProductServlet?method=allProductListPage&category=HomeGarden"
 										style="color: #555"> Home & Garden</a></li>
 									<br />
 									<br />
@@ -451,32 +451,32 @@ h3.break>a {
 									<br />
 									<li>Sort by: <br /></li>
 									<li style="background-color: #B8B8B8;"><a
-										href="/ProductServlet?method=allProductListPage&category=HomeGarden"
+										href="/managerProductServlet?method=allProductListPage&category=HomeGarden"
 										style="color: #555"> Sort by Release Date</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&sortBy=-1&category=HomeGarden"
+										href="/managerProductServlet?method=allProductListPage&sortBy=-1&category=HomeGarden"
 										style="color: #555"> Sort by Higher Price</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&sortBy=1&category=HomeGarden"
+										href="/managerProductServlet?method=allProductListPage&sortBy=1&category=HomeGarden"
 										style="color: #555"> Sort by Lower Price</a></li>
 								</c:if>
 								
 								
 								<c:if test="${category eq null && sortBy eq -1}">
 									<li style="background-color: #B8B8B8;"><a
-										href="/ProductServlet?method=allProductListPage&sortBy=-1"
+										href="/managerProductServlet?method=allProductListPage&sortBy=-1"
 										style="color: #555"> All Categories</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&category=Electronics&sortBy=-1"
+										href="/managerProductServlet?method=allProductListPage&category=Electronics&sortBy=-1"
 										style="color: #555"> Electronics</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&category=Fashion&sortBy=-1"
+										href="/managerProductServlet?method=allProductListPage&category=Fashion&sortBy=-1"
 										style="color: #555"> Fashion</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&category=SportingGoods&sortBy=-1"
+										href="/managerProductServlet?method=allProductListPage&category=SportingGoods&sortBy=-1"
 										style="color: #555"> Sporting goods</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&category=HomeGarden&sortBy=-1"
+										href="/managerProductServlet?method=allProductListPage&category=HomeGarden&sortBy=-1"
 										style="color: #555"> Home & Garden</a></li>
 
 									<br />
@@ -485,29 +485,29 @@ h3.break>a {
 									<br />
 									<li>Sort by: <br /></li>
 									<li ><a
-										href="/ProductServlet?method=allProductListPage"
+										href="/managerProductServlet?method=allProductListPage"
 										style="color: #555"> Sort by Release Date</a></li>
 									<li style="background-color: #B8B8B8;"><a
-										href="/ProductServlet?method=allProductListPage&sortBy=-1"
+										href="/managerProductServlet?method=allProductListPage&sortBy=-1"
 										style="color: #555"> Sort by Higher Price</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&sortBy=1"
+										href="/managerProductServlet?method=allProductListPage&sortBy=1"
 										style="color: #555"> Sort by Lower Price</a></li>
 								</c:if>
 								<c:if test="${category eq 'Electronics' && sortBy eq -1}">
-									<li><a href="/ProductServlet?method=allProductListPage&sortBy=-1"
+									<li><a href="/managerProductServlet?method=allProductListPage&sortBy=-1"
 										style="color: #555"> All Categories</a></li>
 									<li style="background-color: #B8B8B8;"><a
-										href="/ProductServlet?method=allProductListPage&category=Electronics&sortBy=-1"
+										href="/managerProductServlet?method=allProductListPage&category=Electronics&sortBy=-1"
 										style="color: #555"> Electronics</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&category=Fashion&sortBy=-1"
+										href="/managerProductServlet?method=allProductListPage&category=Fashion&sortBy=-1"
 										style="color: #555"> Fashion</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&category=SportingGoods&sortBy=-1"
+										href="/managerProductServlet?method=allProductListPage&category=SportingGoods&sortBy=-1"
 										style="color: #555"> Sporting goods</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&category=HomeGarden&sortBy=-1"
+										href="/managerProductServlet?method=allProductListPage&category=HomeGarden&sortBy=-1"
 										style="color: #555"> Home & Garden</a></li>
 									<br />
 									<br />
@@ -515,29 +515,29 @@ h3.break>a {
 									<br />
 									<li>Sort by: <br /></li>
 									<li ><a
-										href="/ProductServlet?method=allProductListPage&category=Electronics"
+										href="/managerProductServlet?method=allProductListPage&category=Electronics"
 										style="color: #555"> Sort by Release Date</a></li>
 									<li style="background-color: #B8B8B8;"><a
-										href="/ProductServlet?method=allProductListPage&sortBy=-1&category=Electronics"
+										href="/managerProductServlet?method=allProductListPage&sortBy=-1&category=Electronics"
 										style="color: #555"> Sort by Higher Price</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&sortBy=1&category=Electronics"
+										href="/managerProductServlet?method=allProductListPage&sortBy=1&category=Electronics"
 										style="color: #555"> Sort by Lower Price</a></li>
 								</c:if>
 								<c:if test="${category eq 'Fashion' && sortBy eq -1}">
-									<li><a href="/ProductServlet?method=allProductListPage&sortBy=-1"
+									<li><a href="/managerProductServlet?method=allProductListPage&sortBy=-1"
 										style="color: #555"> All Categories</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&category=Electronics&sortBy=-1"
+										href="/managerProductServlet?method=allProductListPage&category=Electronics&sortBy=-1"
 										style="color: #555"> Electronics</a></li>
 									<li style="background-color: #B8B8B8;"><a
-										href="/ProductServlet?method=allProductListPage&category=Fashion&sortBy=-1"
+										href="/managerProductServlet?method=allProductListPage&category=Fashion&sortBy=-1"
 										style="color: #555"> Fashion</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&category=SportingGoods&sortBy=-1"
+										href="/managerProductServlet?method=allProductListPage&category=SportingGoods&sortBy=-1"
 										style="color: #555"> Sporting goods</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&category=HomeGarden&sortBy=-1"
+										href="/managerProductServlet?method=allProductListPage&category=HomeGarden&sortBy=-1"
 										style="color: #555"> Home & Garden</a></li>
 									<br />
 									<br />
@@ -545,29 +545,29 @@ h3.break>a {
 									<br />
 									<li>Sort by: <br /></li>
 									<li ><a
-										href="/ProductServlet?method=allProductListPage&category=Fashion"
+										href="/managerProductServlet?method=allProductListPage&category=Fashion"
 										style="color: #555"> Sort by Release Date</a></li>
 									<li style="background-color: #B8B8B8;"><a
-										href="/ProductServlet?method=allProductListPage&sortBy=-1&category=Fashion"
+										href="/managerProductServlet?method=allProductListPage&sortBy=-1&category=Fashion"
 										style="color: #555"> Sort by Higher Price</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&sortBy=1&category=Fashion"
+										href="/managerProductServlet?method=allProductListPage&sortBy=1&category=Fashion"
 										style="color: #555"> Sort by Lower Price</a></li>
 								</c:if>
 								<c:if test="${category eq 'SportingGoods' && sortBy eq -1}">
-									<li><a href="/ProductServlet?method=allProductListPage&sortBy=-1"
+									<li><a href="/managerProductServlet?method=allProductListPage&sortBy=-1"
 										style="color: #555"> All Categories</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&category=Electronics&sortBy=-1"
+										href="/managerProductServlet?method=allProductListPage&category=Electronics&sortBy=-1"
 										style="color: #555"> Electronics</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&category=Fashion&sortBy=-1"
+										href="/managerProductServlet?method=allProductListPage&category=Fashion&sortBy=-1"
 										style="color: #555"> Fashion</a></li>
 									<li style="background-color: #B8B8B8;"><a
-										href="/ProductServlet?method=allProductListPage&category=SportingGoods&sortBy=-1"
+										href="/managerProductServlet?method=allProductListPage&category=SportingGoods&sortBy=-1"
 										style="color: #555"> Sporting goods</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&category=HomeGarden&sortBy=-1"
+										href="/managerProductServlet?method=allProductListPage&category=HomeGarden&sortBy=-1"
 										style="color: #555"> Home & Garden</a></li>
 									<br />
 									<br />
@@ -575,29 +575,29 @@ h3.break>a {
 									<br />
 									<li>Sort by: <br /></li>
 									<li ><a
-										href="/ProductServlet?method=allProductListPage&category=SportingGoods"
+										href="/managerProductServlet?method=allProductListPage&category=SportingGoods"
 										style="color: #555"> Sort by Release Date</a></li>
 									<li style="background-color: #B8B8B8;"><a
-										href="/ProductServlet?method=allProductListPage&sortBy=-1&category=SportingGoods"
+										href="/managerProductServlet?method=allProductListPage&sortBy=-1&category=SportingGoods"
 										style="color: #555"> Sort by Higher Price</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&sortBy=1&category=SportingGoods"
+										href="/managerProductServlet?method=allProductListPage&sortBy=1&category=SportingGoods"
 										style="color: #555"> Sort by Lower Price</a></li>
 								</c:if>
 								<c:if test="${category eq 'HomeGarden' && sortBy eq -1}">
-									<li><a href="/ProductServlet?method=allProductListPage&sortBy=-1"
+									<li><a href="/managerProductServlet?method=allProductListPage&sortBy=-1"
 										style="color: #555"> All Categories</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&category=Electronics&sortBy=-1"
+										href="/managerProductServlet?method=allProductListPage&category=Electronics&sortBy=-1"
 										style="color: #555"> Electronics</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&category=Fashion&sortBy=-1"
+										href="/managerProductServlet?method=allProductListPage&category=Fashion&sortBy=-1"
 										style="color: #555"> Fashion</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&category=SportingGoods&sortBy=-1"
+										href="/managerProductServlet?method=allProductListPage&category=SportingGoods&sortBy=-1"
 										style="color: #555"> Sporting goods</a></li>
 									<li style="background-color: #B8B8B8;"><a
-										href="/ProductServlet?method=allProductListPage&category=HomeGarden&sortBy=-1"
+										href="/managerProductServlet?method=allProductListPage&category=HomeGarden&sortBy=-1"
 										style="color: #555"> Home & Garden</a></li>
 									<br />
 									<br />
@@ -605,32 +605,32 @@ h3.break>a {
 									<br />
 									<li>Sort by: <br /></li>
 									<li ><a
-										href="/ProductServlet?method=allProductListPage&category=HomeGarden"
+										href="/managerProductServlet?method=allProductListPage&category=HomeGarden"
 										style="color: #555"> Sort by Release Date</a></li>
 									<li style="background-color: #B8B8B8;"><a
-										href="/ProductServlet?method=allProductListPage&sortBy=-1&category=HomeGarden"
+										href="/managerProductServlet?method=allProductListPage&sortBy=-1&category=HomeGarden"
 										style="color: #555"> Sort by Higher Price</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&sortBy=1&category=HomeGarden"
+										href="/managerProductServlet?method=allProductListPage&sortBy=1&category=HomeGarden"
 										style="color: #555"> Sort by Lower Price</a></li>
 								</c:if>
 								
 								
 								<c:if test="${category eq null && sortBy eq 1}">
 									<li style="background-color: #B8B8B8;"><a
-										href="/ProductServlet?method=allProductListPage&sortBy=1"
+										href="/managerProductServlet?method=allProductListPage&sortBy=1"
 										style="color: #555"> All Categories</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&category=Electronics&sortBy=1"
+										href="/managerProductServlet?method=allProductListPage&category=Electronics&sortBy=1"
 										style="color: #555"> Electronics</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&category=Fashion&sortBy=1"
+										href="/managerProductServlet?method=allProductListPage&category=Fashion&sortBy=1"
 										style="color: #555"> Fashion</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&category=SportingGoods&sortBy=1"
+										href="/managerProductServlet?method=allProductListPage&category=SportingGoods&sortBy=1"
 										style="color: #555"> Sporting goods</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&category=HomeGarden&sortBy=1"
+										href="/managerProductServlet?method=allProductListPage&category=HomeGarden&sortBy=1"
 										style="color: #555"> Home & Garden</a></li>
 
 									<br />
@@ -639,29 +639,29 @@ h3.break>a {
 									<br />
 									<li>Sort by: <br /></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage"
+										href="/managerProductServlet?method=allProductListPage"
 										style="color: #555"> Sort by Release Date</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&sortBy=-1"
+										href="/managerProductServlet?method=allProductListPage&sortBy=-1"
 										style="color: #555"> Sort by Higher Price</a></li>
 									<li style="background-color: #B8B8B8;"><a
-										href="/ProductServlet?method=allProductListPage&sortBy=1"
+										href="/managerProductServlet?method=allProductListPage&sortBy=1"
 										style="color: #555"> Sort by Lower Price</a></li>
 								</c:if>
 								<c:if test="${category eq 'Electronics' && sortBy eq 1}">
-									<li><a href="/ProductServlet?method=allProductListPage&sortBy=1"
+									<li><a href="/managerProductServlet?method=allProductListPage&sortBy=1"
 										style="color: #555"> All Categories</a></li>
 									<li style="background-color: #B8B8B8;"><a
-										href="/ProductServlet?method=allProductListPage&category=Electronics&sortBy=1"
+										href="/managerProductServlet?method=allProductListPage&category=Electronics&sortBy=1"
 										style="color: #555"> Electronics</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&category=Fashion&sortBy=1"
+										href="/managerProductServlet?method=allProductListPage&category=Fashion&sortBy=1"
 										style="color: #555"> Fashion</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&category=SportingGoods&sortBy=1"
+										href="/managerProductServlet?method=allProductListPage&category=SportingGoods&sortBy=1"
 										style="color: #555"> Sporting goods</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&category=HomeGarden&sortBy=1"
+										href="/managerProductServlet?method=allProductListPage&category=HomeGarden&sortBy=1"
 										style="color: #555"> Home & Garden</a></li>
 									<br />
 									<br />
@@ -669,29 +669,29 @@ h3.break>a {
 									<br />
 									<li>Sort by: <br /></li>
 									<li ><a
-										href="/ProductServlet?method=allProductListPage&category=Electronics"
+										href="/managerProductServlet?method=allProductListPage&category=Electronics"
 										style="color: #555"> Sort by Release Date</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&sortBy=-1&category=Electronics"
+										href="/managerProductServlet?method=allProductListPage&sortBy=-1&category=Electronics"
 										style="color: #555"> Sort by Higher Price</a></li>
 									<li style="background-color: #B8B8B8;"><a
-										href="/ProductServlet?method=allProductListPage&sortBy=1&category=Electronics"
+										href="/managerProductServlet?method=allProductListPage&sortBy=1&category=Electronics"
 										style="color: #555"> Sort by Lower Price</a></li>
 								</c:if>
 								<c:if test="${category eq 'Fashion' && sortBy eq 1}">
-									<li><a href="/ProductServlet?method=allProductListPage&sortBy=1"
+									<li><a href="/managerProductServlet?method=allProductListPage&sortBy=1"
 										style="color: #555"> All Categories</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&category=Electronics&sortBy=1"
+										href="/managerProductServlet?method=allProductListPage&category=Electronics&sortBy=1"
 										style="color: #555"> Electronics</a></li>
 									<li style="background-color: #B8B8B8;"><a
-										href="/ProductServlet?method=allProductListPage&category=Fashion&sortBy=1"
+										href="/managerProductServlet?method=allProductListPage&category=Fashion&sortBy=1"
 										style="color: #555"> Fashion</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&category=SportingGoods&sortBy=1"
+										href="/managerProductServlet?method=allProductListPage&category=SportingGoods&sortBy=1"
 										style="color: #555"> Sporting goods</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&category=HomeGarden&sortBy=1"
+										href="/managerProductServlet?method=allProductListPage&category=HomeGarden&sortBy=1"
 										style="color: #555"> Home & Garden</a></li>
 									<br />
 									<br />
@@ -699,29 +699,29 @@ h3.break>a {
 									<br />
 									<li>Sort by: <br /></li>
 									<li ><a
-										href="/ProductServlet?method=allProductListPage&category=Fashion"
+										href="/managerProductServlet?method=allProductListPage&category=Fashion"
 										style="color: #555"> Sort by Release Date</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&sortBy=-1&category=Fashion"
+										href="/managerProductServlet?method=allProductListPage&sortBy=-1&category=Fashion"
 										style="color: #555"> Sort by Higher Price</a></li>
 									<li style="background-color: #B8B8B8;"><a
-										href="/ProductServlet?method=allProductListPage&sortBy=1&category=Fashion"
+										href="/managerProductServlet?method=allProductListPage&sortBy=1&category=Fashion"
 										style="color: #555"> Sort by Lower Price</a></li>
 								</c:if>
 								<c:if test="${category eq 'SportingGoods' && sortBy eq 1}">
-									<li><a href="/ProductServlet?method=allProductListPage&sortBy=1"
+									<li><a href="/managerProductServlet?method=allProductListPage&sortBy=1"
 										style="color: #555"> All Categories</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&category=Electronics&sortBy=1"
+										href="/managerProductServlet?method=allProductListPage&category=Electronics&sortBy=1"
 										style="color: #555"> Electronics</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&category=Fashion&sortBy=1"
+										href="/managerProductServlet?method=allProductListPage&category=Fashion&sortBy=1"
 										style="color: #555"> Fashion</a></li>
 									<li style="background-color: #B8B8B8;"><a
-										href="/ProductServlet?method=allProductListPage&category=SportingGoods&sortBy=1"
+										href="/managerProductServlet?method=allProductListPage&category=SportingGoods&sortBy=1"
 										style="color: #555"> Sporting goods</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&category=HomeGarden&sortBy=1"
+										href="/managerProductServlet?method=allProductListPage&category=HomeGarden&sortBy=1"
 										style="color: #555"> Home & Garden</a></li>
 									<br />
 									<br />
@@ -729,29 +729,29 @@ h3.break>a {
 									<br />
 									<li>Sort by: <br /></li>
 									<li ><a
-										href="/ProductServlet?method=allProductListPage&category=SportingGoods"
+										href="/managerProductServlet?method=allProductListPage&category=SportingGoods"
 										style="color: #555"> Sort by Release Date</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&sortBy=-1&category=SportingGoods"
+										href="/managerProductServlet?method=allProductListPage&sortBy=-1&category=SportingGoods"
 										style="color: #555"> Sort by Higher Price</a></li>
 									<li style="background-color: #B8B8B8;"><a
-										href="/ProductServlet?method=allProductListPage&sortBy=1&category=SportingGoods"
+										href="/managerProductServlet?method=allProductListPage&sortBy=1&category=SportingGoods"
 										style="color: #555"> Sort by Lower Price</a></li>
 								</c:if>
 								<c:if test="${category eq 'HomeGarden' && sortBy eq 1}">
-									<li><a href="/ProductServlet?method=allProductListPage&sortBy=1"
+									<li><a href="/managerProductServlet?method=allProductListPage&sortBy=1"
 										style="color: #555"> All Categories</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&category=Electronics&sortBy=1"
+										href="/managerProductServlet?method=allProductListPage&category=Electronics&sortBy=1"
 										style="color: #555"> Electronics</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&category=Fashion&sortBy=1"
+										href="/managerProductServlet?method=allProductListPage&category=Fashion&sortBy=1"
 										style="color: #555"> Fashion</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&category=SportingGoods&sortBy=1"
+										href="/managerProductServlet?method=allProductListPage&category=SportingGoods&sortBy=1"
 										style="color: #555"> Sporting goods</a></li>
 									<li style="background-color: #B8B8B8;"><a
-										href="/ProductServlet?method=allProductListPage&category=HomeGarden&sortBy=1"
+										href="/managerProductServlet?method=allProductListPage&category=HomeGarden&sortBy=1"
 										style="color: #555"> Home & Garden</a></li>
 									<br />
 									<br />
@@ -759,13 +759,13 @@ h3.break>a {
 									<br />
 									<li>Sort by: <br /></li>
 									<li ><a
-										href="/ProductServlet?method=allProductListPage&category=HomeGarden"
+										href="/managerProductServlet?method=allProductListPage&category=HomeGarden"
 										style="color: #555"> Sort by Release Date</a></li>
 									<li><a
-										href="/ProductServlet?method=allProductListPage&sortBy=-1&category=HomeGarden"
+										href="/managerProductServlet?method=allProductListPage&sortBy=-1&category=HomeGarden"
 										style="color: #555"> Sort by Higher Price</a></li>
 									<li style="background-color: #B8B8B8;"><a
-										href="/ProductServlet?method=allProductListPage&sortBy=1&category=HomeGarden"
+										href="/managerProductServlet?method=allProductListPage&sortBy=1&category=HomeGarden"
 										style="color: #555"> Sort by Lower Price</a></li>
 								</c:if>
 								
@@ -786,7 +786,7 @@ h3.break>a {
 								</form> -->
 
 								<form id="searchForm" class="form-inline" method="post"
-									action="/ProductServlet?method=allProductListPage">
+									action="/managerProductServlet?method=allProductListPage">
 									<input type="hidden" id="currentPage" name="currentPage"
 										value="" />
 									<div class="form-group">
