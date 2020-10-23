@@ -27,8 +27,8 @@
        $(function() {
     	   $("#editForm").ajaxForm(
    				function() {
-   					$.messager.confirm("Comfirmation",
-   							"you sure you want to edit this category",
+   					$.messager.confirm("Congradulation",
+   							"you have edit this category successfully",
    							function() {
    								window.location.reload();
    								document.getElementById("editForm")
@@ -85,7 +85,7 @@
     	   <br/>
     	   <br/>	
     	<div class= "#box_relative">
-    	<input type="submit" value="edit" style="width:50px; height:30px;"/>
+    	<input onclick="return confirm('You sure want to edit this category?')"type="submit" value="edit" style="width:50px; height:30px;"/>
     	<input type="reset" value="reset"style="width:50px; height:30px;"/>
 <!--     	onclick="return confirm('You sure want to edit this category?')" -->
     	

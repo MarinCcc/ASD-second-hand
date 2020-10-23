@@ -194,5 +194,11 @@ public class UserServlet extends BaseServlet {
 			return "f:/msg.jsp";
 		}
 	}
+	
+	public String findAll(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+		request.setAttribute("userList", userService.findAll());
+	    return "f:/userInfo.jsp";
+	}
 
 }

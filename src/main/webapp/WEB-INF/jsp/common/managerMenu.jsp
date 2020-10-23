@@ -13,10 +13,8 @@
 	<li class="list-group-item">
 		<a href="#"><span class="text-title">Monitoring</span></a>
 		<ul class="in">
-			<li name="allProducts"><a href="/projects.jsp">view all products</a></li>
-			<li name="Transation record"><a href="/">view pending order</a></li>
-			<li name="seller"><a href="/">view all sellers</a></li>
-			<li name="buyer"><a href="/">view all buyers</a></li>
+			<li name="allProducts"><a href="/managerProject.jsp">View all products</a></li>
+			<li name="buyer"><a href="/UserServlet?method=findAll">View all User</a></li>
 			<li name="auditSaleApplyPage"><a href="/ProductServlet?method=auditSaleApplyPage">audit Sale Application</a></li>
 			
 		</ul>

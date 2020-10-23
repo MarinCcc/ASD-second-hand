@@ -12,7 +12,7 @@
 		</div>
 		<ul class="nav navbar-nav">
 			<li id="index" ><a href="/managerManagement.jsp">MainPage</a></li>
-			<li id="Monitoring"><a href="/">Monitoring</a></li>
+			<li id="Monitoring"><a href="/UserServlet?method=findAll ">Monitoring</a></li>
 			<li id="Categories"><a href="<c:url value ='/CategoryServlet?method=findAll'/>">Categories</a></li>
 			<li id="personal"><a href="/personalInfo.jsp">Personal Information</a></li>
 			
