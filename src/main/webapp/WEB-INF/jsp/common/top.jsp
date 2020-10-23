@@ -24,6 +24,14 @@
 					</c:otherwise>
 				</c:choose>
 				<li><a href="#">Help</a></li>
+				<li><a href="#">Balance: $ ${session_user.getBalance()}</a></li>
+				<li>
+				<form action="/UserServlet" method="get">
+					<input type = "hidden" name="method" value="topupBalance">
+					<input type="text" name="balance" placeholder="enter balance">
+					<input type="submit" name="submit" value="Top Up">
+				</form>
+				</li>
 			</ul>
 		</div>
 	</div>

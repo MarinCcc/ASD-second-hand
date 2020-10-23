@@ -28,13 +28,23 @@
 		<servlet-name>OrderServlet</servlet-name>
 		<servlet-class>cn.second_hand.product.servlet.OrderServlet</servlet-class>
 	</servlet>
-
+	
+	<servlet>
+	<servlet-name>CartServlet</servlet-name>
+	<servlet-class>cn.second_hand.cart.servlet.CartServlet</servlet-class>
+	</servlet>
+	
 	<servlet>
 		<description></description>
 		<display-name>ManagerServlet</display-name>
 		<servlet-name>ManagerServlet</servlet-name>
 		<servlet-class>cn.second_hand.manager.servlet.ManagerServlet</servlet-class>
 	</servlet>
+	<servlet-mapping>
+	<servlet-name>CartServlet</servlet-name>
+	<url-pattern>/CartServlet</url-pattern>
+	</servlet-mapping>
+	
 	<servlet-mapping>
 		<servlet-name>ManagerServlet</servlet-name>
 		<url-pattern>/ManagerServlet</url-pattern>

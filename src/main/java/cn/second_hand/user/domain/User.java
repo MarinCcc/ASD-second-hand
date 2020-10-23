@@ -4,8 +4,15 @@ public class User {
 	private String email;
 	private String password;
 	private String verifyCode;
+	private double balance;
 	private boolean activeStatus;
 	
+	public double getBalance() {
+		return balance;
+	}
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
 	public boolean isActiveStatus() {
 		return activeStatus;
 	}

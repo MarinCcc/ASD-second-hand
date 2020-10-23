@@ -78,7 +78,7 @@ public class ProductServlet extends BaseServlet {
 	public String saleApplyingListPage(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		AuditQueryObject auditQueryObject = new AuditQueryObject();
-		auditQueryObject.setPageSize(2);
+		auditQueryObject.setPageSize(5);
 		User user = (User) request.getSession().getAttribute("session_user");
 		String currentUserEmail = user.getEmail();
 		int currentPage = 1;
@@ -96,7 +96,7 @@ public class ProductServlet extends BaseServlet {
 	public String sellingProductListPage(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		AuditQueryObject auditQueryObject = new AuditQueryObject();
-		auditQueryObject.setPageSize(2);
+		auditQueryObject.setPageSize(5);
 		User user = (User) request.getSession().getAttribute("session_user");
 		String currentUserEmail = user.getEmail();
 		int currentPage = 1;
@@ -114,7 +114,7 @@ public class ProductServlet extends BaseServlet {
 	public String refusedSaleApplyingListPage(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		AuditQueryObject auditQueryObject = new AuditQueryObject();
-		auditQueryObject.setPageSize(2);
+		auditQueryObject.setPageSize(5);
 		User user = (User) request.getSession().getAttribute("session_user");
 		String currentUserEmail = user.getEmail();
 		int currentPage = 1;

@@ -52,5 +52,9 @@ public class UserDao {
 	public void resetPassword(String code, String password) {
 		 collection.updateOne(Filters.eq("passwordResetCode", code), new Document("$set",new Document("password",password).append("passwordResetCode", null)));
 	}
+	
+	public void updateBalance(String userEmail, Double bal) {
+		 collection.updateOne(Filters.eq("email", userEmail), new Document("$set",new Document("balance",bal)));
+	}
 
 }

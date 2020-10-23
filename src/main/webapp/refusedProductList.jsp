@@ -109,7 +109,7 @@ x
 			</div>
 			<div class="col-sm-9">
 				<div class="page-header">
-					<h3>Applying Order</h3>
+					<h3>Refused product</h3>
 				</div>
 				<form id="searchForm" class="form-inline" method="post"
 					action="/ProductServlet?method=refusedSaleApplyingListPage">
@@ -148,7 +148,7 @@ x
 							</div>
 						</c:when>
 						<c:otherwise>
-							<h1>You have nothing on sale at present</h1>
+							<h1>You have nothing been refused at present</h1>
 						</c:otherwise>
 					</c:choose>
 				</div>

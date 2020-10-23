@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page isELIgnored="false"%>
 <html>
 <head>
@@ -38,27 +39,35 @@
                 </div>
             </c:when>
             <c:otherwise>
-                <table class="table table-hover">
+                <table style="width:70%;">
                     <thead>
                     <tr>
                         <th>Product</th>
                         <th>Price</th>
                         <th>Quantity</th>
-                        <th>Total Price</th>
+                        <th>Date</th>
                         <th>Operation</th>
                     </tr>
                     </thead>
                     <tbody>
 
-<%--                        <c:forEach var="item" items="${cartVos}">--%>
-<%--                            <tr>--%>
-<%--                                <td></td>--%>
-<%--                                <td></td>--%>
-<%--                                <td></td>--%>
-<%--                                <td></td>--%>
-<%--                                <td></td>--%>
-<%--                            </tr>--%>
-<%--                        </c:forEach>--%>
+                        <c:forEach var="item" items="${cartVos}">
+                           <tr>
+                               <td>${item.productTitle }</td>
+                               <td>${item.productPrice }</td>
+                               <td>${item.quantity }</td>
+                               <jsp:useBean id="now" class="java.util.Date" scope="request" />
+                               <td><fmt:formatDate  value="${item.createAt }" type="both"/></td>
+                               <td><input type="checkbox" name="product" value="${item.productId}" checked="checked" /></td>
+                            </tr>
+                        </c:forEach>
+                        <tr>
+                               <td></td>
+                                <td></td>
+                               <td></td>
+                               <td></td>
+                               <td><button  name="buy" id="cartBuy">buy</button></td>
+                       </tr>
                     </tbody>
                 </table>
             </c:otherwise>
@@ -68,4 +77,16 @@
 
 </body>
 <%@ include file="WEB-INF/jsp/common/footer.jsp"%>
+<script type="text/javascript">
+	$(function(){
+		$("#cartBuy").click(function(){
+			var chk_value =[];
+			$('input[name="product"]:checked').each(function(){
+				chk_value.push($(this).val());
+			});
+			alert(JSON.stringify(chk_value));
+		});
+		
+	});
+</script>
 </html>

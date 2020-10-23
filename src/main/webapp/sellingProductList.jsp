@@ -109,7 +109,7 @@ x
 			</div>
 			<div class="col-sm-9">
 				<div class="page-header">
-					<h3>Applying Order</h3>
+					<h3>Selling Product</h3>
 				</div>
 				<form id="searchForm" class="form-inline" method="post"
 					action="/ProductServlet?method=sellingProductListPage">

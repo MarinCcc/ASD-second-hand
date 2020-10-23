@@ -193,6 +193,16 @@ public class UserServlet extends BaseServlet {
 			request.setAttribute("msg", e.getMessage());
 			return "f:/msg.jsp";
 		}
+		
+	}
+	
+	public String topupBalance(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
+		Double bal = Double.parseDouble(request.getParameter("balance"));
+		User currentUser = (User)request.getSession().getAttribute("session_user");
+		currentUser.setBalance(currentUser.getBalance() + bal);
+		userService.topupBalance(currentUser);
+		request.getSession().setAttribute("session_user", currentUser);
+		return "r:/ProductServlet?method=allProductListPage";
 	}
 
 }
