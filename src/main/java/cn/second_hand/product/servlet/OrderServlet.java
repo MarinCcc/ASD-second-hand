@@ -17,6 +17,7 @@ public class OrderServlet extends BaseServlet{
 	public void getOrderList(HttpServletRequest request, HttpServletResponse response) throws ServletException,Exception {
 		System.out.println("-------进入方法--------------");
 		String typeString =  request.getParameter("typeId");
+		String keywords = request.getParameter("keywords");
 		AuditQueryObject auditQueryObject = new AuditQueryObject();
 		auditQueryObject.setPageSize(1);
 		int currentPage = 1;
@@ -24,14 +25,27 @@ public class OrderServlet extends BaseServlet{
 			auditQueryObject.setCurrentPage(currentPage);
 		}
 		PageResult pageResult;
+		
 		if (Integer.valueOf(typeString)==1) {
-			pageResult = orderService.getBuyersOrder(auditQueryObject);
+			if(keywords != null || !keywords.equals("")) {
+				pageResult = orderService.getBuyersOrderbyOderNumber(auditQueryObject, keywords);
+				request.setAttribute("searchParam", keywords);
+			}else {
+				pageResult = orderService.getBuyersOrder(auditQueryObject);
+			}
+			
 			request.setAttribute("pageResult", pageResult);
 			System.out.println("-----买家订单----------");
 			request.getRequestDispatcher("/BuyersOrder.jsp").forward(request, response);
 			//return "http://localhost:8080/second-hand/BuyersOrder.jsp";
 		}else {
-			pageResult = orderService.getSellerOrder(auditQueryObject);
+			if(keywords != null || !keywords.equals("")) {
+				pageResult = orderService.getSellerOrderbyOderNumber(auditQueryObject, keywords);
+				request.setAttribute("searchParam", keywords);
+			}else {
+				pageResult = orderService.getSellerOrder(auditQueryObject);
+			}
+			
 			request.setAttribute("pageResult", pageResult);
 			System.out.println("-----卖家订单----------");
 			request.getRequestDispatcher("/SellerOrder.jsp").forward(request, response);

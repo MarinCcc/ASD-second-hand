@@ -24,7 +24,7 @@
 </style>
 
 <script type="text/javascript">
-	
+
 </script>
 
 </head>
@@ -78,7 +78,10 @@
 					&emsp;&emsp;&emsp;&emsp;
 					New customer?<a href="/register.jsp"> Start here.</a>
 				</div>
-				<br><br><br>
+				<br>
+				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+				<a href="/forgotPassword.jsp"> Forgot password?</a>
+				<br><br>
 			</div>
 		</form>
 	</div>

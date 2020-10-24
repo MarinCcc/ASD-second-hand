@@ -1,99 +1,124 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page isELIgnored="false" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
 <html>
 <head>
+<head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Online Second-Hand Trading Market</title>
-<link rel="stylesheet" href="/js/bootstrap-3.3.2-dist/css/bootstrap.css" type="text/css" />
+
+<link rel="stylesheet" href="/js/bootstrap-3.3.2-dist/css/bootstrap.css"
+	type="text/css" />
 <link rel="stylesheet" href="/css/core.css" type="text/css" />
-<style type="text/css">
-	.el-login-form{
-		width:600px; 
-		margin-left:auto;
-		margin-right:auto;
-		margin-top: 20px;
-	}
-	.el-login-form .form-control{
-		width: 220px;
-		display: inline;
-	}
-</style>
+<link type="text/css" rel="stylesheet" href="/css/account.css" />
+<script type="text/javascript" src="/js/jquery/jquery-2.1.3.js"></script>
+<script type="text/javascript"
+	src="/js/bootstrap-3.3.2-dist/js/bootstrap.js"></script>
+<script type="text/javascript" src="/js/jquery.bootstrap.min.js"></script>
+
+<script type="text/javascript">
+	
+</script>
+
+<%@ include file="WEB-INF/jsp/common/top.jsp"%>
+
+</head>
 </head>
 <body>
-<c:choose>
-<c:when test="${empty sessionScope.session_user }">
-	<div class="el-header" >
-		<div class="container" style="position: relative;">
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="/register.jsp">Sign-up</a></li>
-				<li><a href="/login.jsp">Sign-in</a></li>
-			</ul>
+	<div style="width: 1300px; background-color: burlywood;">
+		<div style="width: 80%; margin: 0 auto">
+			<a href="home.jsp">home</a>
+			&nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="./CartServlet?method=cartList">Shopping Cart</a>
 		</div>
-	</div>
-</c:when>
+		<div>
 
-<c:otherwise>
-<div class="el-header" >
-		<div class="container" style="position: relative;">
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="/saleApplication.jsp">Sale Application Page</a></li>
-				<li><a href="/index.jsp">${session_user.email}</a></li>
-				<li><a href="<c:url value='/UserServlet?method=logout'/>" >Logout</a></li>
-				
-			</ul>
-		</div>
-</div>
-</c:otherwise>
-</c:choose>
-	<div class="navbar navbar-default el-navbar">
-		<div class="container">
-			<div class="navbar-header">
-				<a href=""><img alt="Brand" src="/images/icon.png"></a>
-				<span class="el-page-title"></span>
+<!-- 			<div style="float: left; margin-left: 25px; width: 300px; height: 300px" style="border:1px solid;">
+				<a href="detail?id=1"  width="100%" height="80%"> 
+					<img alt="earphone" src="img/earphone.jpg" width="100%" height="100%">
+				</a>
+				<div width="100%" height="20%">
+				3
+				</div>
 			</div>
+			<div
+				style="float: left; margin-left: 25px; width: 300px; height: 300px"  style="border:1px solid;">
+				<a href="detail?id=2" width="100%" height="80%"> <img alt="iwatch" src="img/iwatch.jpg" width="100%" height="100%">
+				</a>
+				<div width="100%" height="20%" >
+					1
+				</div>
+			</div>
+			<div
+				style="float: left; margin-left: 25px; width: 300px; height: 300px">
+				<a href="detail?id=3"  width="100%" height="80%"> <img alt="pc" src="img/pc.jpg" width="100%" height="100%">
+				</a>
+				<div width="100%" height="20%">
+				2
+				</div>
+			</div>
+			<div
+				style="float: left; margin-left: 25px; width: 300px; height: 300px">
+				<a href="detail?id=4"> <img alt="ipad" src="img/ipad.jpg" width="100%" height="80%">
+				</a>
+				<div width="100%" height="20%" style="background-color:red;"></div>
+			</div> -->
 		</div>
+
 	</div>
-	<c:choose>
-   <c:when test="${empty sessionScope.session_user }">
-	<h1>
-	&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-	Please login first
-	</h1>
-	</c:when>
-	<c:otherwise>
-	<h1>
-	&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-	Hello ${session_user.email}
-	</h1>
-	</c:otherwise>
-	</c:choose>
-	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-	
-	
-<div class="container-foot-2">
-		<div class="context">
-				<div class="left">
-				<p> Online Second-Hand trading market</p>
-				<p> Develop&emsp;&emsp;&emsp;by：&emsp;ASD Group one</p>
-				<p> Contact Address：&emsp;University of Technology, Sydney</p>
-				<p> Contact Number：&emsp;0424666666</p>
-				<p> Email Address &emsp;：&emsp;GroupOne@Student.uts.edu.au</p>
-			</div>
-			<div class="right">
-			<br><br><br><br><br><br>
-				<a target="_blank" href="https://www.facebook.com/"><img
-					src="/images/facebook.png"></a>
-				<a target="_blank" href="https://www.twitter.com/"><img
-					src="/images/twitter.png"></a>
-				<a target="_blank" href="https://www.youtube.com/"><img
-					src="/images/youtube.png"></a>
-				<a target="_blank" href="https://www.github.com/"><img
-					src="/images/github.png"></a>
-			</div>
-		</div>
-	</div>
+			<c:set var="string1" value="<br/>"/>
+			<table>
+				<c:forEach items="${pageResult.listData}" var="product" varStatus="status">
+					<c:if test="${status.count%4==1 }" >
+						<tr>
+
+					</c:if>
+							<td>
+								<div style="float: left; margin-left: 25px; width: 300px; height: 300px;border:1px solid;margin-top:30px;">
+									<a href="detail?id=1"  width="100%" height="75%"> 
+										<img alt="${product.description}" src="${product.picture1}" width="100%" height="100%">
+									</a>
+									<div width="100%" height="25%">
+									${product.title} &nbsp;&nbsp;&nbsp;&nbsp;$${product.price} ${status.count}&nbsp;&nbsp;&nbsp;&nbsp;
+									<a href="javaScript:addCart('${product.oid}')"><img style="height:20px;width:32px;" alt="add to shopping cart" src="./images/cart1.jpeg"></a>
+									</div>
+								</div>
+							
+							</td>
+
+					<c:if test="${status.count%4==0}" >
+						</tr>
+
+					</c:if>
+				</c:forEach>
+			</table>
 </body>
+<script type="text/javascript">
+	//add goods to cart
+	function addCart(productId){
+	        //请求参数
+	        var list = {};
+	        //
+	        $.ajax({
+	            //请求方式
+	            type : "POST",
+	            //请求的媒体类型
+	            //contentType: "application/json;charset=UTF-8",
+	            //请求地址
+	            url : "./CartServlet?method=cartAdd&productId="+productId,
+	            //数据，json字符串
+	            //data : JSON.stringify(list),
+	            //请求成功
+	            success : function(result) {
+	                console.log(result);
+	            },
+	            //请求失败，包含具体的错误信息
+	            error : function(e){
+	                console.log(e.status);
+	                console.log(e.responseText);
+	            }
+	        });
+	}
+</script>
 </html>
