@@ -27,11 +27,11 @@ public class OrderServlet extends BaseServlet{
 		PageResult pageResult;
 		
 		if (Integer.valueOf(typeString)==1) {
-			if(keywords != null || !keywords.equals("")) {
+			if(keywords == null || keywords.equals("")) {
+				pageResult = orderService.getBuyersOrder(auditQueryObject);
+			}else {
 				pageResult = orderService.getBuyersOrderbyOderNumber(auditQueryObject, keywords);
 				request.setAttribute("searchParam", keywords);
-			}else {
-				pageResult = orderService.getBuyersOrder(auditQueryObject);
 			}
 			
 			request.setAttribute("pageResult", pageResult);
@@ -39,11 +39,11 @@ public class OrderServlet extends BaseServlet{
 			request.getRequestDispatcher("/BuyersOrder.jsp").forward(request, response);
 			//return "http://localhost:8080/second-hand/BuyersOrder.jsp";
 		}else {
-			if(keywords != null || !keywords.equals("")) {
+			if(keywords == null || keywords.equals("")) {
+				pageResult = orderService.getSellerOrder(auditQueryObject);
+			}else {
 				pageResult = orderService.getSellerOrderbyOderNumber(auditQueryObject, keywords);
 				request.setAttribute("searchParam", keywords);
-			}else {
-				pageResult = orderService.getSellerOrder(auditQueryObject);
 			}
 			
 			request.setAttribute("pageResult", pageResult);
