@@ -35,7 +35,7 @@ public class CartDao {
      * @return
      */
     public FindIterable<Document> queryByUser(String email) {
-        Bson filter = Filters.eq("email", email);
+        Bson filter = Filters.eq("userEmail", email);
         FindIterable<Document> results = cartCollection.find(filter);
         return results;
     }

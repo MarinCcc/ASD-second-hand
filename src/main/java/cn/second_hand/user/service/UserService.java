@@ -1,5 +1,7 @@
 package cn.second_hand.user.service;
 
+import java.util.List;
+
 import org.bson.Document;
 
 import cn.second_hand.user.dao.UserDao;
@@ -70,5 +72,11 @@ public class UserService {
 	public void topupBalance(User currentUser) {
 		dao.updateBalance(currentUser.getEmail(), currentUser.getBalance());
 	}
+	
+	public List<User> findAll() {
+		
+		return dao.findAll();	
+		}
+
 
 }

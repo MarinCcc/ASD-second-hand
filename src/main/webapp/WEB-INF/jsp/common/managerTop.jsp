@@ -10,7 +10,7 @@
 <div class="el-header" >
 		<div class="container" style="position: relative;">
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="/index.jsp">MainPage</a></li>
+				<li><a href="/managerManagement.jsp">MainPage</a></li>
 					
 					<li>
 						  <a class="el-current-user" href="/personal.do">${sessionScope.session_manager.name}</a>

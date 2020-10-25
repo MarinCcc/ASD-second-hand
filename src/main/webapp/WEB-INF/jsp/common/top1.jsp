@@ -18,12 +18,20 @@
 					<c:otherwise>
 						<li><a class="el-current-user" href="/personal.do">${sessionScope.session_user.email}</a>
 						</li>
-						<li><a href="./CartServlet?method=cartList">ShoppingCart</a></li>
+						<li><a href="/cartList.jsp">ShoppingCart</a></li>
 						<li><a href="/home.jsp">PersonalManage</a></li>
 						<li><a href="/UserServlet?method=logout">Logout</a></li>
 					</c:otherwise>
 				</c:choose>
 				<li><a href="#">Help</a></li>
+				<li><a href="#">Balance: $ ${session_user.getBalance()}</a></li>
+				<li>
+				<form action="/UserServlet" method="get">
+					<input type = "hidden" name="method" value="topupBalance">
+					<input type="text" name="balance" placeholder="enter balance">
+					<input type="submit" name="submit" value="Top Up">
+				</form>
+				</li>
 			</ul>
 		</div>
 	</div>

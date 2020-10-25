@@ -817,7 +817,7 @@ h3.break>a {
 							<div class="row">
 								<div class="col-md-3">
 									<div class="thumbnail">
-										<img alt="300x200" src="${product.picture1}" style="width:300px;height:400px;"/>
+										<img alt="300x200" src="${product.picture1}" />
 										<div class="caption">
 											<h3 class="break">
 												<%-- <a href="project.html">${product.title}</a> --%>
@@ -827,9 +827,7 @@ h3.break>a {
 											<div style="float: left;">
 												<i class="glyphicon glyphicon-screenshot" title="price"></i>
 												$${product.price }
-											<span  style="margin-left: 120px;" onClick="addCart('${product.oid}','${product.title}')">
-												<img alt="添加到购物车" src="./images/cart1.jpeg" style="width:15px;height:15px;margin-Right:10px;">
-											</span>											</div>
+											</div>
 
 											<br>
 											<div>
@@ -845,20 +843,15 @@ h3.break>a {
 			<c:if test="${index.index!=0 && index.index%4!=0}">
 				<div class="col-md-3">
 					<div class="thumbnail">
-						<img alt="300x200" src="${product.picture1}"  style="width:300px;height:400px;"/>
+						<img alt="300x200" src="${product.picture1}" />
 						<div class="caption">
 							<h3 class="break">
-								<%-- <a href="project.html">${product.title}</a> --%>
-								<a href="ProductServlet?method=showProductDescription&oid=${product.getOid().toString()}">${product.title}</a>
+								<a href="project.html">${product.title}</a>
 							</h3>
 							<p>
 							<div style="float: left;">
 								<i class="glyphicon glyphicon-screenshot" title="price"></i>
 								$${product.price }
-								<span  style="margin-left: 120px;" onClick="addCart('${product.oid}','${product.title}')">
-									<img alt="添加到购物车" src="./images/cart1.jpeg" style="width:15px;height:15px;margin-Right:10px;">
-								</span>
-								
 							</div>
 
 							<br>
@@ -881,31 +874,4 @@ h3.break>a {
 	</div>
 </body>
 <%@ include file="WEB-INF/jsp/common/footer.jsp"%>
-<script type="text/javascript">
-	//add goods to cart
-	function addCart(productId,title){
-	        //请求参数
-	        var list = {};
-	        //
-	        $.ajax({
-	            //请求方式
-	            type : "POST",
-	            //请求的媒体类型
-	            //contentType: "application/json;charset=UTF-8",
-	            //请求地址
-	            url : "./CartServlet?method=cartAdd&productId="+productId,
-	            //数据，json字符串
-	            //data : JSON.stringify(list),
-	            //请求成功
-	            success : function(result) {
-	                alert("YOU HAVE PUT "+title+" INTO CART!");
-	            },
-	            //请求失败，包含具体的错误信息
-	            error : function(e){
-	                console.log(e.status);
-	                console.log(e.responseText);
-	            }
-	        });
-	}
-</script>
 </html>

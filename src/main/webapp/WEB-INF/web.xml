@@ -36,10 +36,40 @@
 	
 	<servlet>
 		<description></description>
-		<display-name>ManagerServlet</display-name>
 		<servlet-name>ManagerServlet</servlet-name>
 		<servlet-class>cn.second_hand.manager.servlet.ManagerServlet</servlet-class>
 	</servlet>
+	
+	<servlet>
+	<servlet-name>PayServlet</servlet-name>
+	<servlet-class>cn.second_hand.cart.servlet.PayServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+	<servlet-name>PayServlet</servlet-name>
+	<url-pattern>/PayServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+	<servlet-name>CategoryServlet</servlet-name>
+	<servlet-class>cn.second_hand.category.servlet.CategoryServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+	<servlet-name>managerProductServlet</servlet-name>
+	<servlet-class>cn.second_hand.product.servlet.managerProductServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+	<servlet-name>managerProductServlet</servlet-name>
+	<url-pattern>/managerProductServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+	<servlet-name>CategoryServlet</servlet-name>
+	<url-pattern>/CategoryServlet</url-pattern>
+	</servlet-mapping>
+	
 	<servlet-mapping>
 	<servlet-name>CartServlet</servlet-name>
 	<url-pattern>/CartServlet</url-pattern>

@@ -18,6 +18,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     PageResult userlist=(PageResult)request.getAttribute("pageResult");
     List<Order> orders =  (ArrayList)userlist.getListData();
   %>
+  
+  
+<div class="search-form">
+ 
+	<form action="/OrderServlet" method="get">
+	<input type="hidden" name="method" value="getOrderList">
+	<input type="hidden" name="typeId" value="2">
+	<p style="text-align:center;">
+		<input type="text" value="${searchParam}" placeholder="enter order number" name="keywords">
+		<input type="submit" value="Search" name="search">
+	</p>
+	</form>
+
+</div>
 <table class="table">
 	<thead>
 		<tr>

@@ -37,13 +37,14 @@ public class CartService {
 		if (null != results) {
 			for (Document doc : results) {
 				CartVo cartVo = new CartVo();
-				Product product = productDao.queryById(doc.getObjectId("productId"));
-				cartVo.setProductId(doc.getObjectId("productId"));
+				String productId = doc.getString("productId");
+				Product product = productDao.queryByIdStr(productId);
+				cartVo.setProductId(product.getOid());
 				cartVo.setProductTitle(product.getTitle());
 				cartVo.setProductPicture(product.getPicture1());
 				cartVo.setProductPrice(product.getPrice());
 				cartVo.setQuantity(doc.getInteger("quantity"));
-				cartVo.setCreateAt(doc.getDate("createAt"));
+				//cartVo.setCreateAt(doc.getDate("createAt"));
 
 				cartVos.add(cartVo);
 			}

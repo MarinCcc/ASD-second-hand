@@ -105,7 +105,7 @@ public class OrderDao {
 			order.setuId(document.getInteger("uId"));
 			order.setUserTypeId(document.getInteger("userTypeId"));
 			order.setCategory(document.getString("category"));
-			order.setMoney(document.getDouble("money"));
+			order.setMoney(document.getInteger("money"));
 			order.setPayType(document.getInteger("payType"));
 			order.setDescription(document.getString("description"));
 			order.setOrderState(document.getInteger("orderState"));

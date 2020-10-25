@@ -204,5 +204,11 @@ public class UserServlet extends BaseServlet {
 		request.getSession().setAttribute("session_user", currentUser);
 		return "r:/ProductServlet?method=allProductListPage";
 	}
+	
+	public String findAll(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+		request.setAttribute("userList", userService.findAll());
+	    return "f:/userInfo.jsp";
+	}
 
 }

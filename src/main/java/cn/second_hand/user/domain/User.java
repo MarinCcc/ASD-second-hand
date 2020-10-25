@@ -1,9 +1,18 @@
 package cn.second_hand.user.domain;
 
+import org.bson.types.ObjectId;
+
 public class User {
 	private String email;
 	private String password;
 	private String verifyCode;
+	private ObjectId oid;
+	public ObjectId getOid() {
+		return oid;
+	}
+	public void setOid(ObjectId oid) {
+		this.oid = oid;
+	}
 	private double balance;
 	private boolean activeStatus;
 	
