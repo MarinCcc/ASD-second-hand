@@ -7,15 +7,16 @@ import cn.second_hand.category.domain.Category;
 import cn.second_hand.user.utils.MongoDBUtils;
 
 public class UnitTest2 {
-MongoDBUtils mangoDb;
-	
-	CategoryDao dao = new CategoryDao();
+
+   MongoDBUtils mangoDb;
+   CategoryDao dao = new CategoryDao();
     
 	
 	@Test
 	public void testMangoDBConnection() {
 		mangoDb.getConnect();
 	}
+	
 	
 	@Test
 	public void testAdd() {
@@ -26,6 +27,7 @@ MongoDBUtils mangoDb;
 	    dao.add(category);
 
 	}
+	
 	
 	@Test
 	public void testEdit() {
@@ -38,6 +40,8 @@ MongoDBUtils mangoDb;
 	
 	}
 	
+	
+	@Test
 	public void testfindAll(){
 		
 		dao.findAll();
