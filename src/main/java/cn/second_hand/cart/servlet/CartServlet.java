@@ -65,8 +65,6 @@ public class CartServlet extends BaseServlet {
         cart.setProductId(productId);
         cart.setQuantity(1);
         cart.setUserEmail(email);
-        
         cartService.saveCart(cart);
-        
     }
 }

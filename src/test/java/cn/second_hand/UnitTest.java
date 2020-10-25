@@ -1,7 +1,11 @@
 package cn.second_hand;
 
+import java.util.Date;
+
 import org.junit.Test;
 
+import cn.second_hand.product.dao.ProductDao;
+import cn.second_hand.product.domain.Product;
 import cn.second_hand.user.dao.UserDao;
 import cn.second_hand.user.domain.User;
 import cn.second_hand.user.utils.MongoDBUtils;
@@ -15,6 +19,38 @@ public class UnitTest {
 //	CartDao carDao = new CartDao();
 //	
 //	OrderDao orderDao = new OrderDao();
+	
+	ProductDao productDao = new ProductDao();
+	
+	@Test
+	public void testSaveSaleApp() {
+		Product product = new Product();
+		product.setApplierEmail("test");
+		product.setApplyStatus(false);
+		product.setApplyTime(new Date());
+		product.setBargainStatus(false);
+		product.setCategory("Fashion");
+		product.setDescription("gucci watch");
+		product.setPrice(200);
+		product.setTitle("gucci watch");
+		productDao.saveSaleApp(product);
+	}
+	
+	@Test
+	public void testAuditSaleApplication() {
+		Product product = new Product();
+		product.setApplierEmail("test");
+		product.setApplyStatus(false);
+		product.setApplyTime(new Date());
+		product.setBargainStatus(false);
+		product.setCategory("Fashion");
+		product.setDescription("gucci watch");
+		product.setPrice(200);
+		product.setTitle("gucci watch");
+		productDao.auditSaleApplication(product);
+	}
+	
+	
 	
 	@Test
 	public void testMangoDBConnection() {

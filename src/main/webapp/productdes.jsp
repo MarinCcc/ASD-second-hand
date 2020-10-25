@@ -10,6 +10,9 @@
 <title>Second-Hand->Login</title>
 <link rel="stylesheet" href="/js/bootstrap-3.3.2-dist/css/bootstrap.css" type="text/css" />
 <link rel="stylesheet" href="/css/core.css" type="text/css" />
+<script src="js/jquery/jquery-2.1.3.min.js"></script>
+<script src="js/bootstrap-3.3.2-dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/plugins/jquery.form.js"></script>
 <title>${product.getTitle()}</title>
 </head>
 <%@ include file="WEB-INF/jsp/common/top.jsp"%>
@@ -25,12 +28,13 @@
 		<li>applierEmail: ${product.getApplierEmail()}</li>
 		<li>remark: ${product.getRemark()}</li>
 	</ul>
-	<%-- <span  style="margin-left: 120px;" onClick="addCart('${product.oid}','${product.getTitle()}')">
-									<img alt="添加到购物车" src="./images/cart1.jpeg" style="width:15px;height:15px;margin-Right:10px;">
-								</span> --%>
+	<span  style="margin-left: 120px;" onClick="addCart('${product.getOid()}','${product.getTitle()}')">
+												<img alt="添加到购物车" src="./images/cart1.jpeg" style="width:15px;height:15px;margin-Right:10px;">
+											</span>									
+	
 </body>
 <%@ include file="WEB-INF/jsp/common/footer.jsp"%>
-<!-- <script type="text/javascript">
+ <script type="text/javascript">
 
 	//add goods to cart
 	function addCart(productId,title){
@@ -39,7 +43,7 @@
 	        //
 	        $.ajax({
 	            //请求方式
-	            type : "GET",
+	            type : "POST",
 	            //请求的媒体类型
 	            //contentType: "application/json;charset=UTF-8",
 	            //请求地址
@@ -57,5 +61,5 @@
 	            }
 	        });
 	}
-</script> -->
+</script>
 </html>
