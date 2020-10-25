@@ -72,7 +72,11 @@
 				
 				$("#myModal").modal("show");
 			});
+<<<<<<< HEAD
 		});
+=======
+		}); 
+>>>>>>> f3c0e8978d665b91dfb01867594aa9e51d324031
 	</script>
 
 <%@ include file="WEB-INF/jsp/common/managerTop.jsp"%>
