@@ -156,14 +156,14 @@
 			<type>jar</type>
 		</dependency>
 
-	<!-- 	<dependency>
+	 	<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-chrome-driver</artifactId>
 			<version>3.141.59</version>
 
-
-		</dependency>
- -->
+</dependency>
+ 
+		
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-support</artifactId>
@@ -181,14 +181,15 @@
 			<scope>test</scope>
 		</dependency>
 
+       <!-- Cucumber-Junit Integration dependency -->
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-junit</artifactId>
 			<version>4.3.1</version>
 			<scope>test</scope>
+</dependency>
 
-		</dependency>
-
+        <!-- Cucumber JVM core  -->
 		<dependency>
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-core</artifactId>
@@ -198,7 +199,7 @@
 
 		</dependency>
 
-
+  <!-- Cucumber dependency for JUnits Test -->
 		<dependency>
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-java</artifactId>
@@ -238,6 +239,26 @@
 			<type>jar</type>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.hamcrest/hamcrest-core -->
+		
+		<dependency>
+		<groupId>org.seleniumhq.selenium</groupId>
+		<artifactId>selenium-firefox-driver</artifactId>
+		<version>3.141.59</version>
+		</dependency>
+		
+		<dependency>
+		<groupId>org.seleniumhq.selenium</groupId>
+		<artifactId>selenium-java</artifactId>
+		<version>3.141.59</version>
+		</dependency>
+		
+		<dependency>
+		<groupId>org.seleniumhq.selenium</groupId>
+		<artifactId>selenium-support</artifactId>
+		<version>3.11.0</version>
+		</dependency>
+		
+		
 		<dependency>
 			<groupId>org.hamcrest</groupId>
 			<artifactId>hamcrest-core</artifactId>
