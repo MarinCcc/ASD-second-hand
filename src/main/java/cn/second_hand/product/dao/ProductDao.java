@@ -467,4 +467,27 @@ public class ProductDao {
 	}
 		return list;
 	}
+	
+	public Product queryByIdStr(String productId) {
+		Bson filter = Filters.eq("_id", new ObjectId(productId));
+		Document d = productCollection.find(filter).first();
+		Product p = null;
+		if (null != d) {
+			p = new Product();
+			p.setOid(d.getObjectId("_id"));
+			p.setApplierEmail(d.getString("applyEmail"));
+			p.setApplyStatus(d.getBoolean("applyStatus"));
+			p.setApplyTime(d.getDate("applyTime"));
+			p.setBargainStatus(d.getBoolean("bargainStatus"));
+			p.setCategory(d.getString("category"));
+			p.setDescription(d.getString("description"));
+			p.setPicture1(d.getString("picture1"));
+			p.setPicture2(d.getString("picture2"));
+			p.setPrice(d.getInteger("price"));
+			p.setTitle(d.getString("title"));
+			p.setAuditState(d.getInteger("auditState"));
+			p.setHide(d.getBoolean("isHide"));
+		}
+		return p;
+	}
 }

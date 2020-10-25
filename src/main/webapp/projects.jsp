@@ -820,7 +820,8 @@ h3.break>a {
 										<img alt="300x200" src="${product.picture1}" />
 										<div class="caption">
 											<h3 class="break">
-												<a href="project.html">${product.title}</a>
+												<%-- <a href="project.html">${product.title}</a> --%>
+												<a href="ProductServlet?method=showProductDescription&oid=${product.getOid().toString()}">${product.title}</a>
 											</h3>
 											<p>
 											<div style="float: left;">

@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.bson.types.ObjectId;
 
+import cn.second_hand.product.dao.ProductDao;
 import cn.second_hand.product.domain.Product;
 import cn.second_hand.product.service.ProductService;
 import cn.second_hand.query.AuditQueryObject;
@@ -248,5 +249,13 @@ public class ProductServlet extends BaseServlet {
 		request.setAttribute("pageResult", pageResult);
 		return "f:/projects.jsp";
 	}
+	
+	public String showProductDescription(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+			ObjectId oid = new ObjectId(request.getParameter("oid"));
+			ProductDao dao = new ProductDao();
+			Product p = dao.queryById(oid);
+			request.setAttribute("product", p);
+			return "f:/productdes.jsp";
+		}
 
 }
