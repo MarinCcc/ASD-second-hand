@@ -1,5 +1,6 @@
 package cn.second_hand;
 
+import org.bson.types.ObjectId;
 import org.junit.Test;
 
 import cn.second_hand.category.dao.CategoryDao;
@@ -33,6 +34,7 @@ public class UnitTest2 {
 	public void testEdit() {
 
 		Category category = new Category();
+		ObjectId oid = category.getOid();
 	    category.setCategoriesName("java2");
 	    category.setDescription("this is a catrgory for java2");
 	    dao.edit(category);
